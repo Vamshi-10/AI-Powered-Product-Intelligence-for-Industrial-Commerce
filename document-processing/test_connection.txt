@@ -1,1 +1,0 @@
-Git connection test for document-processing branch.
