@@ -1,0 +1,610 @@
+/* ============================================================
+   ADHARRA — Enterprise Dashboard Navbar
+   ============================================================ */
+
+.dnav-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10, 14, 26, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.dnav-inner {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 0 24px;
+  height: 56px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* ---- Brand ---- */
+.dnav-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  flex-shrink: 0;
+  margin-right: 28px;
+}
+
+.dnav-logo {
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(135deg, #7C3AED, #8B5CF6);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.dnav-brand-text {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0.08em;
+}
+
+.dnav-brand-pill {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #A78BFA;
+  background: rgba(139, 92, 246, 0.12);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  border-radius: 999px;
+  padding: 2px 8px;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+/* ---- Desktop Nav Links ---- */
+.dnav-links {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex: 1;
+}
+
+.dnav-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: #94A3B8;
+  text-decoration: none;
+  transition: color 0.2s, background 0.2s;
+  white-space: nowrap;
+}
+
+.dnav-link:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.dnav-link--active {
+  color: #fff;
+  background: rgba(139, 92, 246, 0.15);
+  font-weight: 600;
+}
+
+.dnav-link--active .dnav-link-icon {
+  color: #A78BFA;
+}
+
+.dnav-link-icon {
+  opacity: 0.8;
+}
+
+/* ---- Right Section ---- */
+.dnav-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 12px;
+  flex-shrink: 0;
+}
+
+/* ---- Icon Buttons ---- */
+.dnav-icon-btn {
+  position: relative;
+  background: none;
+  border: none;
+  color: #94A3B8;
+  cursor: pointer;
+  padding: 7px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s, background 0.2s;
+}
+
+.dnav-icon-btn:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.dnav-notif-dot {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 6px;
+  height: 6px;
+  background: #8B5CF6;
+  border-radius: 50%;
+  border: 1.5px solid #0A0E1A;
+}
+
+/* ---- Search ---- */
+.dnav-search-wrap {
+  position: relative;
+}
+
+.dnav-search-expanded {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dnav-search-icon {
+  position: absolute;
+  left: 10px;
+  color: #64748B;
+  pointer-events: none;
+}
+
+.dnav-search-input {
+  width: 220px;
+  padding: 7px 10px 7px 30px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.82rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.dnav-search-input:focus {
+  border-color: rgba(139, 92, 246, 0.5);
+  background: rgba(139, 92, 246, 0.05);
+}
+
+.dnav-search-input::placeholder {
+  color: #64748B;
+}
+
+.dnav-search-results {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  min-width: 280px;
+  background: #131A2B;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+  z-index: 200;
+  overflow: hidden;
+}
+
+.dnav-search-result-item {
+  padding: 9px 14px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transition: background 0.15s;
+}
+
+.dnav-search-result-item:last-child {
+  border-bottom: none;
+}
+
+.dnav-search-result-item:hover {
+  background: rgba(139, 92, 246, 0.12);
+}
+
+.dnav-result-name {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.dnav-result-meta {
+  font-size: 0.71rem;
+  color: #64748B;
+  margin-top: 2px;
+}
+
+/* ---- Upload Button ---- */
+.dnav-upload-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  background: rgba(139, 92, 246, 0.15);
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  border-radius: 8px;
+  color: #A78BFA;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+  font-family: inherit;
+}
+
+.dnav-upload-btn:hover {
+  background: rgba(139, 92, 246, 0.25);
+  border-color: rgba(139, 92, 246, 0.6);
+  color: #C4B5FD;
+}
+
+/* ---- Avatar ---- */
+.dnav-avatar-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  color: #94A3B8;
+  cursor: pointer;
+  padding: 5px 9px;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.dnav-avatar-btn:hover {
+  border-color: rgba(139, 92, 246, 0.3);
+  color: #fff;
+}
+
+.dnav-avatar {
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(135deg, #7C3AED, #8B5CF6);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+/* ---- Dropdowns ---- */
+.dnav-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: #131A2B;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+  z-index: 200;
+  overflow: hidden;
+  animation: fadeDropdown 0.15s ease;
+}
+
+@keyframes fadeDropdown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Notifications panel */
+.dnav-notif-panel {
+  width: 300px;
+}
+
+.dnav-notif-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.dnav-notif-mark {
+  background: none;
+  border: none;
+  font-size: 0.72rem;
+  color: #A78BFA;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 600;
+}
+
+.dnav-notif-item {
+  display: flex;
+  gap: 10px;
+  padding: 10px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background 0.15s;
+}
+
+.dnav-notif-item:last-child {
+  border-bottom: none;
+}
+
+.dnav-notif-item:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.dnav-notif-title {
+  font-size: 0.79rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.dnav-notif-desc {
+  font-size: 0.72rem;
+  color: #94A3B8;
+  margin-top: 2px;
+}
+
+.dnav-notif-time {
+  font-size: 0.67rem;
+  color: #64748B;
+  margin-top: 3px;
+}
+
+/* User Dropdown */
+.dnav-user-dropdown {
+  width: 220px;
+}
+
+.dnav-user-info {
+  padding: 12px 16px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.dnav-user-name {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.dnav-user-email {
+  font-size: 0.72rem;
+  color: #64748B;
+  margin-top: 2px;
+}
+
+.dnav-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  padding: 10px 16px;
+  background: none;
+  border: none;
+  color: #94A3B8;
+  font-size: 0.82rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: color 0.15s, background 0.15s;
+  text-align: left;
+}
+
+.dnav-menu-item:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.dnav-menu-logout {
+  color: #F87171;
+}
+
+.dnav-menu-logout:hover {
+  background: rgba(239, 68, 68, 0.08);
+  color: #FCA5A5;
+}
+
+/* ---- Sign In Button ---- */
+.dnav-signin-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  background: rgba(139, 92, 246, 0.12);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 8px;
+  color: #A78BFA;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.dnav-signin-btn:hover {
+  background: rgba(139, 92, 246, 0.22);
+  color: #C4B5FD;
+}
+
+/* ---- Mobile ---- */
+.dnav-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: #94A3B8;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 8px;
+  font-family: inherit;
+}
+
+.dnav-mobile-drawer {
+  display: none;
+  flex-direction: column;
+  padding: 12px 16px 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(10, 14, 26, 0.98);
+  gap: 4px;
+}
+
+.dnav-mobile-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #94A3B8;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.dnav-mobile-link:hover,
+.dnav-mobile-link--active {
+  color: #fff;
+  background: rgba(139, 92, 246, 0.12);
+}
+
+.dnav-mobile-upload {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+  padding: 10px 12px;
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  border-radius: 8px;
+  background: rgba(139, 92, 246, 0.1);
+  color: #A78BFA;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.dnav-mobile-upload:hover {
+  background: rgba(139, 92, 246, 0.2);
+}
+
+@media (max-width: 900px) {
+  .dnav-links {
+    display: none;
+  }
+  .dnav-hamburger {
+    display: flex;
+  }
+  .dnav-mobile-drawer {
+    display: flex;
+  }
+  .dnav-search-wrap {
+    display: none;
+  }
+  .dnav-upload-btn span {
+    display: none;
+  }
+  .dnav-upload-btn {
+    padding: 7px 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .dnav-brand-pill {
+    display: none;
+  }
+  .dnav-inner {
+    padding: 0 16px;
+  }
+}
+
+/* ============================================================
+   ADHARRA Theme System Overrides for Navbar Accent Color
+   ============================================================ */
+
+.dnav-link--active {
+  background: var(--accent-soft) !important;
+}
+
+.dnav-link--active .dnav-link-icon {
+  color: var(--accent-primary) !important;
+}
+
+.dnav-notif-dot {
+  background: var(--accent-primary) !important;
+}
+
+.dnav-search-input:focus {
+  border-color: var(--accent-primary) !important;
+  background: var(--accent-soft) !important;
+}
+
+.dnav-search-result-item:hover {
+  background: var(--accent-soft) !important;
+}
+
+.dnav-upload-btn {
+  background: var(--accent-soft) !important;
+  border-color: var(--accent-border) !important;
+  color: var(--accent-primary) !important;
+}
+
+.dnav-upload-btn:hover {
+  background: var(--accent-border) !important;
+  border-color: var(--accent-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+.dnav-signin-btn {
+  background: var(--accent-soft) !important;
+  border-color: var(--accent-border) !important;
+  color: var(--accent-primary) !important;
+}
+
+.dnav-signin-btn:hover {
+  background: var(--accent-border) !important;
+  color: var(--text-primary) !important;
+}
+
+.dnav-avatar {
+  background: var(--accent-primary) !important;
+}
+
+.dnav-mobile-link:hover,
+.dnav-mobile-link--active {
+  background: var(--accent-soft) !important;
+  color: var(--text-primary) !important;
+}
+
+.dnav-mobile-upload {
+  border-color: var(--accent-border) !important;
+  background: var(--accent-soft) !important;
+  color: var(--accent-primary) !important;
+}
+
+.dnav-mobile-upload:hover {
+  background: var(--accent-border) !important;
+}
+
+.dnav-logo {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)) !important;
+}
+
+.dnav-brand-pill {
+  color: var(--accent-primary) !important;
+  background: var(--accent-soft) !important;
+  border-color: var(--accent-border) !important;
+}
+
+.dnav-avatar-btn:hover {
+  border-color: var(--accent-border) !important;
+}
+
