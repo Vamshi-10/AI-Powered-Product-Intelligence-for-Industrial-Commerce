@@ -8,5 +8,3 @@ openpyxl
 supabase
 python-dotenv
 httpx
-pypdf
-Pillow
