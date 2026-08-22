@@ -1,0 +1,258 @@
+{
+  "Material": {
+    "permitted_values": [
+      "Stainless Steel",
+      "Carbon Steel",
+      "Alloy Steel",
+      "Cast Iron",
+      "Aluminum",
+      "Brass",
+      "Bronze",
+      "Copper",
+      "Carbide",
+      "Bi-Metal",
+      "High Speed Steel",
+      "Diamond",
+      "Masonry",
+      "Abrasive",
+      "Ceramic",
+      "Rubber",
+      "Polyurethane",
+      "Nylon",
+      "PVC",
+      "Polyethylene",
+      "Polypropylene",
+      "Silicone",
+      "Fiberglass",
+      "Composite PVC",
+      "Capped Polymer",
+      "Capped Composite",
+      "Composite",
+      "Wood Plastic Composite",
+      "Impact Resistant Polymer"
+    ],
+    "synonyms": {
+      "ss": "Stainless Steel",
+      "s/s": "Stainless Steel",
+      "st stl": "Stainless Steel",
+      "stainless": "Stainless Steel",
+      "al": "Aluminum",
+      "alum": "Aluminum",
+      "hss": "High Speed Steel",
+      "poly": "Polymer",
+      "cast": "Cast Iron",
+      "carb": "Carbide",
+      "comp": "Composite",
+      "composite pvc": "Composite PVC",
+      "pvc composite": "Composite PVC",
+      "azek pvc": "Composite PVC",
+      "deck composite": "Composite"
+    }
+  },
+  "Finish_Color": {
+    "permitted_values": [
+      "White",
+      "Black",
+      "Stainless Steel",
+      "Chrome",
+      "Brushed Chrome",
+      "Polished Chrome",
+      "Satin Nickel",
+      "Brushed Nickel",
+      "Polished Brass",
+      "Satin Brass",
+      "Oil Rubbed Bronze",
+      "Matte Black",
+      "Black Oxide",
+      "Gray",
+      "Dark Gray",
+      "Silver",
+      "Zinc Plated",
+      "Galvanized",
+      "Red",
+      "Yellow",
+      "Blue",
+      "Clear",
+      "Brownstone",
+      "Slate Gray",
+      "Mahogany",
+      "Dark Cocoa",
+      "Castle Gate",
+      "American Walnut",
+      "English Walnut",
+      "Weathered Teak",
+      "Coastline",
+      "Silver Maple",
+      "Espresso",
+      "Tigerwood",
+      "Whitewash Cedar",
+      "French White Oak",
+      "Seaside Oak",
+      "Biscayne",
+      "Carmel",
+      "Jasper",
+      "Rainier",
+      "Honey Grove"
+    ],
+    "synonyms": {
+      "wh": "White",
+      "wht": "White",
+      "blk": "Black",
+      "bk": "Black",
+      "ss": "Stainless Steel",
+      "chr": "Chrome",
+      "sn": "Satin Nickel",
+      "bn": "Brushed Nickel",
+      "orb": "Oil Rubbed Bronze",
+      "gry": "Gray",
+      "dark grey": "Dark Gray",
+      "black oxide finish": "Black Oxide",
+      "galv": "Galvanized",
+      "zinc": "Zinc Plated",
+      "brwn": "Brownstone",
+      "slate": "Slate Gray",
+      "teak": "Weathered Teak",
+      "walnut": "American Walnut",
+      "oak": "French White Oak",
+      "maple": "Silver Maple"
+    }
+  },
+  "Edge_Profile": {
+    "permitted_values": [
+      "Grooved",
+      "Square Edge",
+      "Solid Profile",
+      "Beveled",
+      "Bullnose",
+      "Fluted",
+      "Tongue and Groove"
+    ],
+    "synonyms": {
+      "grv": "Grooved",
+      "groove": "Grooved",
+      "sq": "Square Edge",
+      "square": "Square Edge",
+      "solid": "Solid Profile",
+      "sq edge": "Square Edge",
+      "sq ed": "Square Edge"
+    }
+  },
+  "Item_Type": {
+    "permitted_values": [
+      "Abrasive Sanding Media",
+      "Circular Saw Blade",
+      "Cut-Off Disc",
+      "Grinding Wheel",
+      "Miter Saw",
+      "Table Saw",
+      "Hammer Drill",
+      "Impact Driver",
+      "Reciprocating Saw Blade",
+      "Deck Board",
+      "Fascia Board",
+      "Fastener",
+      "Anchor",
+      "Tape Measure",
+      "Dishwasher",
+      "Laundry Appliance",
+      "Industrial Tape",
+      "Linear Wire",
+      "Mortar",
+      "Building Materials",
+      "Industrial Supply"
+    ],
+    "synonyms": {
+      "saw blade": "Circular Saw Blade",
+      "sanding belt": "Abrasive Sanding Media",
+      "sanding disc": "Abrasive Sanding Media",
+      "cutoff disc": "Cut-Off Disc",
+      "cut-off wheel": "Cut-Off Disc",
+      "cut off wheel": "Cut-Off Disc",
+      "grinding disc": "Grinding Wheel",
+      "drill": "Hammer Drill",
+      "decking": "Deck Board",
+      "fascia": "Fascia Board",
+      "washer": "Laundry Appliance",
+      "dryer": "Laundry Appliance"
+    }
+  },
+  "Voltage": {
+    "permitted_values": [
+      "12 V",
+      "18 V",
+      "20 V",
+      "24 V",
+      "36 V",
+      "40 V",
+      "60 V",
+      "120 V",
+      "208 V",
+      "240 V",
+      "277 V",
+      "480 V",
+      "600 V"
+    ],
+    "synonyms": {
+      "12v": "12 V",
+      "18v": "18 V",
+      "20v": "20 V",
+      "24v": "24 V",
+      "60v": "60 V",
+      "120v": "120 V",
+      "110v": "120 V",
+      "115v": "120 V",
+      "220v": "240 V",
+      "230v": "240 V",
+      "240v": "240 V",
+      "480v": "480 V"
+    }
+  },
+  "Phase": {
+    "permitted_values": [
+      "1 Phase",
+      "3 Phase",
+      "Single Phase",
+      "Three Phase"
+    ],
+    "synonyms": {
+      "1ph": "1 Phase",
+      "1-ph": "1 Phase",
+      "1 phase": "1 Phase",
+      "3ph": "3 Phase",
+      "3-ph": "3 Phase",
+      "3 phase": "3 Phase",
+      "single": "1 Phase",
+      "three": "3 Phase"
+    }
+  },
+  "Grit": {
+    "permitted_values": [
+      "P24", "P36", "P40", "P50", "P60", "P80", "P100", "P120", "P150", "P180", "P220", "P240", "P320", "P400", "P600", "P800", "P1000", "P1200", "P1500", "P2000"
+    ],
+    "synonyms": {
+      "24 grit": "P24",
+      "36 grit": "P36",
+      "40 grit": "P40",
+      "60 grit": "P60",
+      "80 grit": "P80",
+      "100 grit": "P100",
+      "120 grit": "P120",
+      "150 grit": "P150",
+      "180 grit": "P180",
+      "220 grit": "P220",
+      "320 grit": "P320",
+      "400 grit": "P400",
+      "600 grit": "P600"
+    }
+  },
+  "Package_Quantity": {
+    "permitted_values": [
+      "1 pc", "2 pc", "3 pc", "4 pc", "5 pc", "6 pc", "8 pc", "10 pc", "12 pc", "15 pc", "20 pc", "24 pc", "25 pc", "50 pc", "100 pc", "250 pc", "500 pc", "1000 pc"
+    ],
+    "synonyms": {
+      "1pc": "1 pc", "2pc": "2 pc", "3pc": "3 pc", "4pc": "4 pc", "5pc": "5 pc", "6pc": "6 pc", "8pc": "8 pc", "10pc": "10 pc", "12pc": "12 pc", "25pc": "25 pc", "50pc": "50 pc", "100pc": "100 pc",
+      "1 pcs": "1 pc", "2 pcs": "2 pc", "3 pcs": "3 pc", "5 pcs": "5 pc", "6 pcs": "6 pc", "10 pcs": "10 pc", "25 pcs": "25 pc", "50 pcs": "50 pc", "100 pcs": "100 pc",
+      "pack of 1": "1 pc", "pack of 2": "2 pc", "pack of 3": "3 pc", "pack of 5": "5 pc", "pack of 6": "6 pc", "pack of 10": "10 pc", "pack of 25": "25 pc", "pack of 50": "50 pc"
+    }
+  }
+}

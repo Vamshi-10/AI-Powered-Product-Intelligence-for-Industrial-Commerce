@@ -1,0 +1,16 @@
+{
+  "products_evaluated": 200,
+  "evaluation_time_sec": 0.757,
+  "throughput_items_per_sec": 264.0,
+  "brand_accuracy": 96.5,
+  "mpn_accuracy": 100.0,
+  "category_accuracy": 100.0,
+  "attribute_lov_accuracy": 100.0,
+  "invoice_description_compliance": 100.0,
+  "mobile_description_compliance": 100.0,
+  "title_compliance": 100.0,
+  "uom_compliance": 100.0,
+  "overall_field_accuracy": 99.56,
+  "average_confidence": 95.44,
+  "human_review_rate": 3.5
+}

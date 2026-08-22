@@ -1,0 +1,10 @@
+{
+  "products_processed": 1000,
+  "columns": 252,
+  "invoice_compliance": 1.0,
+  "mobile_compliance": 1.0,
+  "uom_compliance": 1.0,
+  "brand_resolution": 0.969,
+  "human_review_rate": 0.031,
+  "average_confidence": 0.9158
+}
