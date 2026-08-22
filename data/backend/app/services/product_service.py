@@ -9,7 +9,7 @@ class ProductService:
 
     def create_product(self, product: Product) -> dict:
         supabase = get_supabase_client()
-        product_data = product.model_dump(exclude_none=True)
+        product_data = product.model_dump()
 
         if supabase:
             try:
@@ -87,7 +87,7 @@ class ProductService:
 
     def update_product(self, product_id: int, product: Product) -> dict:
         supabase = get_supabase_client()
-        product_data = product.model_dump(exclude_none=True)
+        product_data = product.model_dump()
 
         if supabase:
             try:
