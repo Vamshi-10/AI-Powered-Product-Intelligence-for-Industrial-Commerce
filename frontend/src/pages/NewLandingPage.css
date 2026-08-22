@@ -1,0 +1,339 @@
+.new-lp-root {
+  width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ── HERO SECTION ── */
+.new-lp-hero {
+  background-color: #0a0a0f;
+  background-image: 
+    linear-gradient(to right, #0a0a0f 40%, rgba(10, 10, 15, 0) 100%),
+    var(--hero-bg-img);
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+  min-height: 65vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  padding: 0 4%;
+}
+
+.new-lp-header {
+  padding: 32px 0;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+}
+
+.new-lp-logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.new-lp-logo-text {
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  font-size: 1.15rem;
+  margin-top: 2px;
+}
+
+.new-lp-hero-content {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  z-index: 10;
+  padding-bottom: 64px;
+}
+
+.new-lp-hero-left {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.new-lp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #c084fc;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.new-lp-title {
+  font-size: 54px;
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.new-lp-title-line {
+  display: block;
+}
+
+.new-lp-text-white {
+  color: #ffffff;
+}
+
+.new-lp-text-gradient {
+  background: linear-gradient(135deg, #7c3aed, #c026d3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.new-lp-desc {
+  color: #9ca3af;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 90%;
+  margin: 0;
+}
+
+.new-lp-actions {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-top: 8px;
+}
+
+.new-lp-btn-primary {
+  background: linear-gradient(135deg, #7c3aed, #c026d3);
+  color: #ffffff;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.new-lp-btn-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.new-lp-btn-secondary {
+  background: transparent;
+  color: #d1d5db;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s;
+  padding: 0;
+}
+
+.new-lp-btn-secondary:hover {
+  color: #ffffff;
+}
+
+.new-lp-btn-secondary .arrow {
+  transition: transform 0.2s;
+}
+
+.new-lp-btn-secondary:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* Removed Neon Mountain SVG styles */
+
+/* ── FEATURE SECTION ── */
+.new-lp-features-section {
+  background-color: #f9fafb;
+  border-top-left-radius: 32px;
+  border-top-right-radius: 32px;
+  margin-top: -32px;
+  position: relative;
+  z-index: 20;
+  padding: 96px 4% 120px;
+  box-shadow: 0 -8px 32px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.new-lp-section-label {
+  color: #7c3aed;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+}
+
+.new-lp-section-title {
+  color: #111827;
+  font-size: 32px;
+  font-weight: 800;
+  margin: 0 0 16px 0;
+}
+
+.new-lp-section-title .highlight {
+  color: #7c3aed;
+}
+
+.new-lp-section-desc {
+  color: #6b7280;
+  text-align: center;
+  max-width: 640px;
+  line-height: 1.6;
+  margin: 0 0 72px 0;
+  font-size: 1.05rem;
+}
+
+.new-lp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.new-lp-card {
+  background: transparent;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.new-lp-card-icon {
+  background: #f3e8ff;
+  color: #7c3aed;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.new-lp-card-title {
+  color: #111827;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+}
+
+.new-lp-card-desc {
+  color: #6b7280;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .new-lp-hero {
+    /* on mobile, gradient goes top-to-bottom so text is readable on top, image below */
+    background-image: 
+      linear-gradient(to bottom, #0a0a0f 55%, rgba(10, 10, 15, 0.2) 100%),
+      var(--hero-bg-img);
+    background-position: bottom center;
+  }
+  .new-lp-hero-content {
+    flex-direction: column;
+    padding-top: 40px;
+  }
+  .new-lp-hero-left {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+  .new-lp-desc {
+    max-width: 100%;
+  }
+  .new-lp-grid {
+    grid-template-columns: 1fr;
+  }
+  .new-lp-card {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* ============================================================
+   ADHARRA Theme System Overrides for Landing Page Accent Color
+   ============================================================ */
+
+.new-lp-hero {
+  background-color: #F7FAFC;
+  background-image: 
+    linear-gradient(to right, #F7FAFC 40%, rgba(247, 250, 252, 0.4) 100%),
+    var(--hero-bg-img);
+}
+
+.new-lp-logo-text {
+  color: #111827;
+}
+
+.new-lp-text-white {
+  color: #111827;
+}
+
+.new-lp-text-gradient {
+  background: linear-gradient(135deg, #06B6D4, #14B8A6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.new-lp-badge {
+  color: #06B6D4;
+}
+
+.new-lp-desc {
+  color: #475569;
+}
+
+.new-lp-btn-primary {
+  background: linear-gradient(135deg, #06B6D4, #14B8A6);
+  color: #ffffff;
+}
+
+.new-lp-btn-primary:hover {
+  background: linear-gradient(135deg, #0891B2, #0d9488);
+}
+
+.new-lp-btn-secondary {
+  color: #475569;
+}
+
+.new-lp-btn-secondary:hover {
+  color: #111827;
+}
+
+.new-lp-section-label {
+  color: #06B6D4;
+}
+
+.new-lp-section-title .highlight {
+  color: #14B8A6;
+}
+
+.new-lp-card-icon {
+  background: rgba(6, 182, 212, 0.1);
+  color: #06B6D4;
+}
+
+@media (max-width: 900px) {
+  .new-lp-hero {
+    background-image: 
+      linear-gradient(to bottom, #F7FAFC 55%, rgba(247, 250, 252, 0.5) 100%),
+      var(--hero-bg-img);
+  }
+}
+
