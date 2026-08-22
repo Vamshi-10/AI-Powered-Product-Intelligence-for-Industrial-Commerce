@@ -1,0 +1,688 @@
+{
+  "summary": {
+    "total_products_audited": 1000,
+    "human_in_the_loop_flagged_count": 29,
+    "human_in_the_loop_rate_percent": 2.9,
+    "brand_exceptions_count": 31,
+    "average_confidence": 91.58,
+    "uom_spacing_compliance_rate_percent": 100.0,
+    "invoice_description_compliance_percent": 100.0,
+    "mobile_description_compliance_percent": 100.0
+  },
+  "categorized_human_review_reasons": {
+    "Unbranded Commodity Bulk Supplies": {
+      "count": 6,
+      "items": [
+        {
+          "row_index": 297,
+          "mpn": "SPB-44BPL",
+          "raw_description": "Patriot 4\"x4\"x37\"/43\" Adjustable Self Leveling Support Post",
+          "resolved_brand": "Industrial Standard",
+          "confidence": 65.0,
+          "review_reasons": [
+            "brand_unresolved_low_confidence",
+            "limited_technical_attributes"
+          ],
+          "warnings": [
+            "Low confidence in brand resolution (40%)",
+            "Limited technical attributes extracted"
+          ]
+        },
+        {
+          "row_index": 330,
+          "mpn": "7547",
+          "raw_description": "Ice Guard OC Weathr Lk Mat 2sq",
+          "resolved_brand": "Industrial Standard",
+          "confidence": 65.0,
+          "review_reasons": [
+            "brand_unresolved_low_confidence",
+            "limited_technical_attributes"
+          ],
+          "warnings": [
+            "Low confidence in brand resolution (40%)",
+            "Limited technical attributes extracted"
+          ]
+        },
+        {
+          "row_index": 594,
+          "mpn": "12-4 SO",
+          "raw_description": "12-4 SO Cord (Linear Foot)",
+          "resolved_brand": "Industrial Standard",
+          "confidence": 65.0,
+          "review_reasons": [
+            "brand_unresolved_low_confidence",
+            "limited_technical_attributes"
+          ],
+          "warnings": [
+            "Low confidence in brand resolution (40%)",
+            "Limited technical attributes extracted"
+          ]
+        },
+        {
+          "row_index": 598,
+          "mpn": "23346-0408",
+          "raw_description": "23346-0408 Wire 16/3 SJEWA 250 (Linear Foot)",
+          "resolved_brand": "Industrial Standard",
+          "confidence": 65.0,
+          "review_reasons": [
+            "brand_unresolved_low_confidence",
+            "limited_technical_attributes"
+          ],
+          "warnings": [
+            "Low confidence in brand resolution (40%)",
+            "Limited technical attributes extracted"
+          ]
+        },
+        {
+          "row_index": 672,
+          "mpn": "TP-1935",
+          "raw_description": "TP-1935 Hole Drilling System",
+          "resolved_brand": "Industrial Standard",
+          "confidence": 65.0,
+          "review_reasons": [
+            "brand_unresolved_low_confidence",
+            "limited_technical_attributes"
+          ],
+          "warnings": [
+            "Low confidence in brand resolution (40%)",
+            "Limited technical attributes extracted"
+          ]
+        },
+        {
+          "row_index": 743,
+          "mpn": "5328",
+          "raw_description": "5328 Lg. Leather Phone Holster - Clip-on",
+          "resolved_brand": "Industrial Standard",
+          "confidence": 65.0,
+          "review_reasons": [
+            "brand_unresolved_low_confidence",
+            "limited_technical_attributes"
+          ],
+          "warnings": [
+            "Low confidence in brand resolution (40%)",
+            "Limited technical attributes extracted"
+          ]
+        }
+      ]
+    },
+    "Local Masonry & Mortar Compounds": {
+      "count": 4,
+      "items": [
+        {
+          "row_index": 96,
+          "mpn": "25-A",
+          "raw_description": "Charcoal Black 25-A Mortar - Type N",
+          "resolved_brand": "Rees Cast Stone Company",
+          "confidence": 65.0,
+          "review_reasons": [
+            "brand_unresolved_low_confidence",
+            "limited_technical_attributes"
+          ],
+          "warnings": [
+            "Low confidence in brand resolution (40%)",
+            "Limited technical attributes extracted"
+          ]
+        },
+        {
+          "row_index": 97,
+          "mpn": "38-E",
+          "raw_description": "Dark Chocolate 38-E Mortar - Type N",
+          "resolved_brand": "Rees Cast Stone Company",
+          "confidence": 65.0,
+          "review_reasons": [
+            "brand_unresolved_low_confidence",
+            "limited_technical_attributes"
+          ],
+          "warnings": [
+            "Low confidence in brand resolution (40%)",
+            "Limited technical attributes extracted"
+          ]
+        },
+        {
+          "row_index": 98,
+          "mpn": "59-J",
+          "raw_description": "Light Buff 59-J Mortar - Type N",
+          "resolved_brand": "Rees Cast Stone Company",
+          "confidence": 65.0,
+          "review_reasons": [
+            "brand_unresolved_low_confidence",
+            "limited_technical_attributes"
+          ],
+          "warnings": [
+            "Low confidence in brand resolution (40%)",
+            "Limited technical attributes extracted"
+          ]
+        },
+        {
+          "row_index": 99,
+          "mpn": "44-A",
+          "raw_description": "Light Chocolate 44-A Mortar - Type N",
+          "resolved_brand": "Rees Cast Stone Company",
+          "confidence": 65.0,
+          "review_reasons": [
+            "brand_unresolved_low_confidence",
+            "limited_technical_attributes"
+          ],
+          "warnings": [
+            "Low confidence in brand resolution (40%)",
+            "Limited technical attributes extracted"
+          ]
+        }
+      ]
+    },
+    "Specialty Regional Hardware & Tooling": {
+      "count": 9,
+      "items": [
+        {
+          "row_index": 675,
+          "mpn": "d10cnk",
+          "raw_description": "D10CNK Prebena 1/2\"x3/8\" - Staple",
+          "resolved_brand": "Prebena",
+          "confidence": 65.0,
+          "review_reasons": [
+            "brand_unresolved_low_confidence",
+            "limited_technical_attributes"
+          ],
+          "warnings": [
+            "Low confidence in brand resolution (40%)",
+            "Limited technical attributes extracted"
+          ]
+        },
+        {
+          "row_index": 676,
+          "mpn": "e28cnkha",
+          "raw_description": "E28CNKHA Prebena 2/4\"x1 1/8\" - Staple",
+          "resolved_brand": "Prebena",
+          "confidence": 65.0,
+          "review_reasons": [
+            "brand_unresolved_low_confidence",
+            "limited_technical_attributes"
+          ],
+          "warnings": [
+            "Low confidence in brand resolution (40%)",
+            "Limited technical attributes extracted"
+          ]
+        },
+        {
+          "row_index": 768,
+          "mpn": "37300952",
+          "raw_description": "095842 Fisch Plug Cutter 3/8\"",
+          "resolved_brand": "Industrial Standard",
+          "confidence": 65.0,
+          "review_reasons": [
+            "brand_unresolved_low_confidence",
+            "limited_technical_attributes"
+          ],
+          "warnings": [
+            "Low confidence in brand resolution (40%)",
+            "Limited technical attributes extracted"
+          ]
+        },
+        {
+          "row_index": 769,
+          "mpn": "6008",
+          "raw_description": "6008 Whiteside Router Bit",
+          "resolved_brand": "Whiteside Machine & Repair Co",
+          "confidence": 65.0,
+          "review_reasons": [
+            "brand_unresolved_low_confidence",
+            "limited_technical_attributes"
+          ],
+          "warnings": [
+            "Low confidence in brand resolution (40%)",
+            "Limited technical attributes extracted"
+          ]
+        },
+        {
+          "row_index": 770,
+          "mpn": "6009",
+          "raw_description": "6009 Whiteside Router Bit",
+          "resolved_brand": "Whiteside Machine & Repair Co",
+          "confidence": 65.0,
+          "review_reasons": [
+            "brand_unresolved_low_confidence",
+            "limited_technical_attributes"
+          ],
+          "warnings": [
+            "Low confidence in brand resolution (40%)",
+            "Limited technical attributes extracted"
+          ]
+        },
+        {
+          "row_index": 771,
+          "mpn": "3000A",
+          "raw_description": "3000A Whiteside Router Bit",
+          "resolved_brand": "Whiteside Machine & Repair Co",
+          "confidence": 65.0,
+          "review_reasons": [
+            "brand_unresolved_low_confidence",
+            "limited_technical_attributes"
+          ],
+          "warnings": [
+            "Low confidence in brand resolution (40%)",
+            "Limited technical attributes extracted"
+          ]
+        },
+        {
+          "row_index": 776,
+          "mpn": "21839NN",
+          "raw_description": "21839NN File Bstd Mill 10\"",
+          "resolved_brand": "Nicholson",
+          "confidence": 65.0,
+          "review_reasons": [
+            "brand_unresolved_low_confidence",
+            "limited_technical_attributes"
+          ],
+          "warnings": [
+            "Low confidence in brand resolution (40%)",
+            "Limited technical attributes extracted"
+          ]
+        },
+        {
+          "row_index": 889,
+          "mpn": "924422",
+          "raw_description": "924422 Mafell Carpentry - Planing Machine ZH 320 Ec 120V",
+          "resolved_brand": "Industrial Standard",
+          "confidence": 65.0,
+          "review_reasons": [
+            "brand_unresolved_low_confidence",
+            "limited_technical_attributes"
+          ],
+          "warnings": [
+            "Low confidence in brand resolution (40%)",
+            "Limited technical attributes extracted"
+          ]
+        },
+        {
+          "row_index": 990,
+          "mpn": "MAG:2044-230-1",
+          "raw_description": "2044-230-1 Stock Feeder 4-Roll - Steff",
+          "resolved_brand": "J&G Machinery",
+          "confidence": 65.0,
+          "review_reasons": [
+            "brand_unresolved_low_confidence",
+            "limited_technical_attributes"
+          ],
+          "warnings": [
+            "Low confidence in brand resolution (40%)",
+            "Limited technical attributes extracted"
+          ]
+        }
+      ]
+    },
+    "Appliance & Safety Accessories": {
+      "count": 10,
+      "items": [
+        {
+          "row_index": 71,
+          "mpn": "D519127",
+          "raw_description": "D519127 Heater Kit",
+          "resolved_brand": "V & V Appliance Parts Inc",
+          "confidence": 65.0,
+          "review_reasons": [
+            "brand_unresolved_low_confidence",
+            "limited_technical_attributes"
+          ],
+          "warnings": [
+            "Low confidence in brand resolution (40%)",
+            "Limited technical attributes extracted"
+          ]
+        },
+        {
+          "row_index": 95,
+          "mpn": "LNL65301",
+          "raw_description": "LNL65301 Digital Tire Pressure - Inflator Gauge",
+          "resolved_brand": "Industrial Standard",
+          "confidence": 65.0,
+          "review_reasons": [
+            "brand_unresolved_low_confidence",
+            "limited_technical_attributes"
+          ],
+          "warnings": [
+            "Low confidence in brand resolution (40%)",
+            "Limited technical attributes extracted"
+          ]
+        },
+        {
+          "row_index": 344,
+          "mpn": "402-R",
+          "raw_description": "402R 12V12AH 8D Battery",
+          "resolved_brand": "MillerTech Energy Solutions",
+          "confidence": 65.0,
+          "review_reasons": [
+            "brand_unresolved_low_confidence",
+            "limited_technical_attributes"
+          ],
+          "warnings": [
+            "Low confidence in brand resolution (40%)",
+            "Limited technical attributes extracted"
+          ]
+        },
+        {
+          "row_index": 345,
+          "mpn": "SL1672",
+          "raw_description": "SL1672 Jumpstart & Pwr Supply",
+          "resolved_brand": "Schumacher",
+          "confidence": 65.0,
+          "review_reasons": [
+            "brand_unresolved_low_confidence",
+            "limited_technical_attributes"
+          ],
+          "warnings": [
+            "Low confidence in brand resolution (40%)",
+            "Limited technical attributes extracted"
+          ]
+        },
+        {
+          "row_index": 361,
+          "mpn": "5522-5EV",
+          "raw_description": "5522-5EV 2 Port Decor Plate",
+          "resolved_brand": "Cooper Wiring Devices",
+          "confidence": 65.0,
+          "review_reasons": [
+            "brand_unresolved_low_confidence",
+            "limited_technical_attributes"
+          ],
+          "warnings": [
+            "Low confidence in brand resolution (40%)",
+            "Limited technical attributes extracted"
+          ]
+        },
+        {
+          "row_index": 503,
+          "mpn": "GT-CB-100C",
+          "raw_description": "GTCB100C Led 100W Cob Bulb",
+          "resolved_brand": "GT-Lite",
+          "confidence": 65.0,
+          "review_reasons": [
+            "brand_unresolved_low_confidence",
+            "limited_technical_attributes"
+          ],
+          "warnings": [
+            "Low confidence in brand resolution (40%)",
+            "Limited technical attributes extracted"
+          ]
+        },
+        {
+          "row_index": 687,
+          "mpn": "HS-DA",
+          "raw_description": "HS-DA Motion Driveway Alert",
+          "resolved_brand": "Sabre",
+          "confidence": 65.0,
+          "review_reasons": [
+            "brand_unresolved_low_confidence",
+            "limited_technical_attributes"
+          ],
+          "warnings": [
+            "Low confidence in brand resolution (40%)",
+            "Limited technical attributes extracted"
+          ]
+        },
+        {
+          "row_index": 698,
+          "mpn": "1624157",
+          "raw_description": "TW52 WH INSIDE CAS VIN WRAPPED",
+          "resolved_brand": "ANDERSEN",
+          "confidence": 65.0,
+          "review_reasons": [
+            "brand_unresolved_low_confidence",
+            "limited_technical_attributes"
+          ],
+          "warnings": [
+            "Low confidence in brand resolution (40%)",
+            "Limited technical attributes extracted"
+          ]
+        },
+        {
+          "row_index": 713,
+          "mpn": "FE-EFX-6L",
+          "raw_description": "FEEFX6L Lith Fire Extinguisher",
+          "resolved_brand": "Ohio Firewatch Protection Inc",
+          "confidence": 65.0,
+          "review_reasons": [
+            "brand_unresolved_low_confidence",
+            "limited_technical_attributes"
+          ],
+          "warnings": [
+            "Low confidence in brand resolution (40%)",
+            "Limited technical attributes extracted"
+          ]
+        },
+        {
+          "row_index": 714,
+          "mpn": "FE-EFX-9L",
+          "raw_description": "FEEFX9L Lith Fire Extinguisher",
+          "resolved_brand": "Ohio Firewatch Protection Inc",
+          "confidence": 65.0,
+          "review_reasons": [
+            "brand_unresolved_low_confidence",
+            "limited_technical_attributes"
+          ],
+          "warnings": [
+            "Low confidence in brand resolution (40%)",
+            "Limited technical attributes extracted"
+          ]
+        }
+      ]
+    }
+  },
+  "brand_exceptions_log": [
+    {
+      "row_index": 60,
+      "mpn": "ASH-40-40-04",
+      "raw_description": "1.5x1.5x13' Legacy Emseal Tape",
+      "resolved_brand": "Emseal Joint Systems Ltd",
+      "review_status": "Accepted"
+    },
+    {
+      "row_index": 71,
+      "mpn": "D519127",
+      "raw_description": "D519127 Heater Kit",
+      "resolved_brand": "V & V Appliance Parts Inc",
+      "review_status": "Flagged for Human Review"
+    },
+    {
+      "row_index": 95,
+      "mpn": "LNL65301",
+      "raw_description": "LNL65301 Digital Tire Pressure - Inflator Gauge",
+      "resolved_brand": "Industrial Standard",
+      "review_status": "Flagged for Human Review"
+    },
+    {
+      "row_index": 96,
+      "mpn": "25-A",
+      "raw_description": "Charcoal Black 25-A Mortar - Type N",
+      "resolved_brand": "Rees Cast Stone Company",
+      "review_status": "Flagged for Human Review"
+    },
+    {
+      "row_index": 97,
+      "mpn": "38-E",
+      "raw_description": "Dark Chocolate 38-E Mortar - Type N",
+      "resolved_brand": "Rees Cast Stone Company",
+      "review_status": "Flagged for Human Review"
+    },
+    {
+      "row_index": 98,
+      "mpn": "59-J",
+      "raw_description": "Light Buff 59-J Mortar - Type N",
+      "resolved_brand": "Rees Cast Stone Company",
+      "review_status": "Flagged for Human Review"
+    },
+    {
+      "row_index": 99,
+      "mpn": "44-A",
+      "raw_description": "Light Chocolate 44-A Mortar - Type N",
+      "resolved_brand": "Rees Cast Stone Company",
+      "review_status": "Flagged for Human Review"
+    },
+    {
+      "row_index": 297,
+      "mpn": "SPB-44BPL",
+      "raw_description": "Patriot 4\"x4\"x37\"/43\" Adjustable Self Leveling Support Post",
+      "resolved_brand": "Industrial Standard",
+      "review_status": "Flagged for Human Review"
+    },
+    {
+      "row_index": 330,
+      "mpn": "7547",
+      "raw_description": "Ice Guard OC Weathr Lk Mat 2sq",
+      "resolved_brand": "Industrial Standard",
+      "review_status": "Flagged for Human Review"
+    },
+    {
+      "row_index": 344,
+      "mpn": "402-R",
+      "raw_description": "402R 12V12AH 8D Battery",
+      "resolved_brand": "MillerTech Energy Solutions",
+      "review_status": "Flagged for Human Review"
+    },
+    {
+      "row_index": 345,
+      "mpn": "SL1672",
+      "raw_description": "SL1672 Jumpstart & Pwr Supply",
+      "resolved_brand": "Schumacher",
+      "review_status": "Flagged for Human Review"
+    },
+    {
+      "row_index": 361,
+      "mpn": "5522-5EV",
+      "raw_description": "5522-5EV 2 Port Decor Plate",
+      "resolved_brand": "Cooper Wiring Devices",
+      "review_status": "Flagged for Human Review"
+    },
+    {
+      "row_index": 503,
+      "mpn": "GT-CB-100C",
+      "raw_description": "GTCB100C Led 100W Cob Bulb",
+      "resolved_brand": "GT-Lite",
+      "review_status": "Flagged for Human Review"
+    },
+    {
+      "row_index": 579,
+      "mpn": "46719",
+      "raw_description": "49719 Wall Light Motion Wh",
+      "resolved_brand": "Maxsa Innovations",
+      "review_status": "Accepted"
+    },
+    {
+      "row_index": 594,
+      "mpn": "12-4 SO",
+      "raw_description": "12-4 SO Cord (Linear Foot)",
+      "resolved_brand": "Industrial Standard",
+      "review_status": "Flagged for Human Review"
+    },
+    {
+      "row_index": 598,
+      "mpn": "23346-0408",
+      "raw_description": "23346-0408 Wire 16/3 SJEWA 250 (Linear Foot)",
+      "resolved_brand": "Industrial Standard",
+      "review_status": "Flagged for Human Review"
+    },
+    {
+      "row_index": 672,
+      "mpn": "TP-1935",
+      "raw_description": "TP-1935 Hole Drilling System",
+      "resolved_brand": "Industrial Standard",
+      "review_status": "Flagged for Human Review"
+    },
+    {
+      "row_index": 675,
+      "mpn": "d10cnk",
+      "raw_description": "D10CNK Prebena 1/2\"x3/8\" - Staple",
+      "resolved_brand": "Prebena",
+      "review_status": "Flagged for Human Review"
+    },
+    {
+      "row_index": 676,
+      "mpn": "e28cnkha",
+      "raw_description": "E28CNKHA Prebena 2/4\"x1 1/8\" - Staple",
+      "resolved_brand": "Prebena",
+      "review_status": "Flagged for Human Review"
+    },
+    {
+      "row_index": 687,
+      "mpn": "HS-DA",
+      "raw_description": "HS-DA Motion Driveway Alert",
+      "resolved_brand": "Sabre",
+      "review_status": "Flagged for Human Review"
+    },
+    {
+      "row_index": 698,
+      "mpn": "1624157",
+      "raw_description": "TW52 WH INSIDE CAS VIN WRAPPED",
+      "resolved_brand": "ANDERSEN",
+      "review_status": "Flagged for Human Review"
+    },
+    {
+      "row_index": 713,
+      "mpn": "FE-EFX-6L",
+      "raw_description": "FEEFX6L Lith Fire Extinguisher",
+      "resolved_brand": "Ohio Firewatch Protection Inc",
+      "review_status": "Flagged for Human Review"
+    },
+    {
+      "row_index": 714,
+      "mpn": "FE-EFX-9L",
+      "raw_description": "FEEFX9L Lith Fire Extinguisher",
+      "resolved_brand": "Ohio Firewatch Protection Inc",
+      "review_status": "Flagged for Human Review"
+    },
+    {
+      "row_index": 743,
+      "mpn": "5328",
+      "raw_description": "5328 Lg. Leather Phone Holster - Clip-on",
+      "resolved_brand": "Industrial Standard",
+      "review_status": "Flagged for Human Review"
+    },
+    {
+      "row_index": 768,
+      "mpn": "37300952",
+      "raw_description": "095842 Fisch Plug Cutter 3/8\"",
+      "resolved_brand": "Industrial Standard",
+      "review_status": "Flagged for Human Review"
+    },
+    {
+      "row_index": 769,
+      "mpn": "6008",
+      "raw_description": "6008 Whiteside Router Bit",
+      "resolved_brand": "Whiteside Machine & Repair Co",
+      "review_status": "Flagged for Human Review"
+    },
+    {
+      "row_index": 770,
+      "mpn": "6009",
+      "raw_description": "6009 Whiteside Router Bit",
+      "resolved_brand": "Whiteside Machine & Repair Co",
+      "review_status": "Flagged for Human Review"
+    },
+    {
+      "row_index": 771,
+      "mpn": "3000A",
+      "raw_description": "3000A Whiteside Router Bit",
+      "resolved_brand": "Whiteside Machine & Repair Co",
+      "review_status": "Flagged for Human Review"
+    },
+    {
+      "row_index": 776,
+      "mpn": "21839NN",
+      "raw_description": "21839NN File Bstd Mill 10\"",
+      "resolved_brand": "Nicholson",
+      "review_status": "Flagged for Human Review"
+    },
+    {
+      "row_index": 889,
+      "mpn": "924422",
+      "raw_description": "924422 Mafell Carpentry - Planing Machine ZH 320 Ec 120V",
+      "resolved_brand": "Industrial Standard",
+      "review_status": "Flagged for Human Review"
+    },
+    {
+      "row_index": 990,
+      "mpn": "MAG:2044-230-1",
+      "raw_description": "2044-230-1 Stock Feeder 4-Roll - Steff",
+      "resolved_brand": "J&G Machinery",
+      "review_status": "Flagged for Human Review"
+    }
+  ]
+}

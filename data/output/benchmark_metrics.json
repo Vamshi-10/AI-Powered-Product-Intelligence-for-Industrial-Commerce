@@ -1,0 +1,26 @@
+{
+  "total_items": 1000,
+  "processing_time_sec": 4.01,
+  "throughput_items_per_sec": 249.5,
+  "average_confidence": 91.58,
+  "invoice_length_pass_rate": 100.0,
+  "invoice_caps_pass_rate": 100.0,
+  "mobile_length_pass_rate": 100.0,
+  "uom_compliance_rate": 100.0,
+  "brand_resolution_rate": 96.9,
+  "brand_review_count": 31,
+  "brand_review_breakdown": {
+    "Brand not found": 1,
+    "Ambiguous brand": 3,
+    "Missing brand": 27
+  },
+  "human_review_count": 31,
+  "human_review_rate": 3.1,
+  "review_reasons_breakdown": {
+    "AMBIGUOUS_BRAND": 31,
+    "LIMITED_ATTRIBUTES": 29
+  },
+  "traceability_status": "ENABLED",
+  "review_reasons_status": "ENABLED",
+  "quality_report_status": "EXPORTED"
+}

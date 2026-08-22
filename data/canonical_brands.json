@@ -1,0 +1,541 @@
+{
+  "description": "Comprehensive Master Brand and Manufacturer database with legal casing, trademark symbols (®, ™), and supplier code mappings",
+  "brands": [
+    {
+      "brand_name": "Diablo®",
+      "canonical_brand": "Diablo®",
+      "brand_code": "DIAB",
+      "manufacturer_name": "Freud America Inc",
+      "manufacturer_code": "2435",
+      "aliases": ["Diablo", "DIABLO", "Freud Inc", "Freud", "Freud Inc (2435)", "Freud America"]
+    },
+    {
+      "brand_name": "Milwaukee®",
+      "canonical_brand": "Milwaukee®",
+      "brand_code": "MILW",
+      "manufacturer_name": "Milwaukee Electric Tool Corp",
+      "manufacturer_code": "4031",
+      "aliases": ["Milwaukee", "MILWAUKEE", "Milw", "Milwaukee Accessory", "Milwaukee Tool", "Milwaukee Accessory (4031)"]
+    },
+    {
+      "brand_name": "DEWALT®",
+      "canonical_brand": "DEWALT®",
+      "brand_code": "DEWLT",
+      "manufacturer_name": "Black & Decker/dewlt",
+      "manufacturer_code": "2585",
+      "aliases": ["Dewalt", "DEWALT", "DeWalt", "Black & Decker/dewlt", "Black & Decker/dewlt (2585)", "Black & Decker"]
+    },
+    {
+      "brand_name": "3M®",
+      "canonical_brand": "3M®",
+      "brand_code": "3MCO",
+      "manufacturer_name": "3M Co",
+      "manufacturer_code": "5293",
+      "aliases": ["3M", "3 M", "3 M Co", "3 M Co (5293)", "Jam Industrial Supply LLC", "Jam Industrial Supply LLC (JAMIN)", "JAMIN"]
+    },
+    {
+      "brand_name": "Mirka®",
+      "canonical_brand": "Mirka®",
+      "brand_code": "MIRK",
+      "manufacturer_name": "Mirka Abrasives Inc",
+      "manufacturer_code": "MIRUS",
+      "aliases": ["Mirka", "MIRKA", "Mirka Abrasives Inc (MIRUS)", "MIRUS", "Abranet", "HIOLIT", "Iridium", "Deos"]
+    },
+    {
+      "brand_name": "Trex®",
+      "canonical_brand": "Trex®",
+      "brand_code": "TREX",
+      "manufacturer_name": "Trex Company Inc",
+      "manufacturer_code": "TREXCO",
+      "aliases": ["TREX", "Trex", "U S Lumber (3073)", "3073", "Boise Cascade Building Materials", "Boise Cascade Building Materials (BOICA)", "BOICA"]
+    },
+    {
+      "brand_name": "TimberTech®",
+      "canonical_brand": "TimberTech®",
+      "brand_code": "TIMB",
+      "manufacturer_name": "The AZEK Company Inc",
+      "manufacturer_code": "6151",
+      "aliases": ["TIMBERTECH", "TimberTech", "Timbertech", "Azek", "AZEK", "Parksite", "Parksite (6151)", "6151"]
+    },
+    {
+      "brand_name": "FRIGIDAIRE®",
+      "canonical_brand": "FRIGIDAIRE®",
+      "brand_code": "FRIG",
+      "manufacturer_name": "Electrolux Home Products Inc",
+      "manufacturer_code": "ELECH",
+      "aliases": ["Frigidaire", "FRIGIDAIRE", "Frigidaire Inc", "Electrolux", "Appliance Dealers Cooperative (APPDE)", "APPDE"]
+    },
+    {
+      "brand_name": "Speed Queen®",
+      "canonical_brand": "Speed Queen®",
+      "brand_code": "SPQU",
+      "manufacturer_name": "Alliance Laundry Systems LLC",
+      "manufacturer_code": "ALLSY",
+      "aliases": ["Speed Queen", "SQ", "SPEED QUEEN"]
+    },
+    {
+      "brand_name": "GE Appliances™",
+      "canonical_brand": "GE®",
+      "brand_code": "GEAP",
+      "manufacturer_name": "GE Appliances - A Haier Company",
+      "manufacturer_code": "GEHAI",
+      "aliases": ["GE", "Ge", "General Electric", "GE Profile"]
+    },
+    {
+      "brand_name": "Café™",
+      "canonical_brand": "Café™",
+      "brand_code": "CAFE",
+      "manufacturer_name": "GE Appliances - A Haier Company",
+      "manufacturer_code": "GEHAI",
+      "aliases": ["Cafe", "Café", "CAFE", "Cafe Appliances"]
+    },
+    {
+      "brand_name": "KitchenAid®",
+      "canonical_brand": "KitchenAid®",
+      "brand_code": "KITA",
+      "manufacturer_name": "Whirlpool Corporation",
+      "manufacturer_code": "WHIRL",
+      "aliases": ["Kitchen Aid", "KitchenAid", "KITCHENAID"]
+    },
+    {
+      "brand_name": "LG®",
+      "canonical_brand": "LG®",
+      "brand_code": "LGE",
+      "manufacturer_name": "LG Electronics USA Inc",
+      "manufacturer_code": "LGELE",
+      "aliases": ["LG", "LG Electronics", "Lg"]
+    },
+    {
+      "brand_name": "Beko®",
+      "canonical_brand": "Beko®",
+      "brand_code": "BEKO",
+      "manufacturer_name": "Beko US Inc",
+      "manufacturer_code": "BEKUS",
+      "aliases": ["Beko", "BEKO", "Beko Wall Oven"]
+    },
+    {
+      "brand_name": "Makita®",
+      "canonical_brand": "Makita®",
+      "brand_code": "MAKT",
+      "manufacturer_name": "Makita USA Inc",
+      "manufacturer_code": "5142",
+      "aliases": ["Makita", "MAKITA", "Makita Usa Inc (5142)", "5142"]
+    },
+    {
+      "brand_name": "Festool®",
+      "canonical_brand": "Festool®",
+      "brand_code": "FEST",
+      "manufacturer_name": "Festool USA",
+      "manufacturer_code": "FESTO",
+      "aliases": ["Festool", "FESTOOL", "Festool USA (FESTO)", "FESTO"]
+    },
+    {
+      "brand_name": "Kreg®",
+      "canonical_brand": "Kreg®",
+      "brand_code": "KREG",
+      "manufacturer_name": "Kreg Tool Company",
+      "manufacturer_code": "KRETO",
+      "aliases": ["Kreg", "KREG", "Kreg Tool Company (KRETO)", "KRETO"]
+    },
+    {
+      "brand_name": "Kichler®",
+      "canonical_brand": "Kichler®",
+      "brand_code": "KICH",
+      "manufacturer_name": "Kichler Lighting LLC",
+      "manufacturer_code": "KICLI",
+      "aliases": ["Kichler", "KICHLER", "Kichler Lighting", "Kichler Lighting (KICLI)", "KICLI"]
+    },
+    {
+      "brand_name": "Satco®",
+      "canonical_brand": "Satco®",
+      "brand_code": "SATC",
+      "manufacturer_name": "Satco Products Inc",
+      "manufacturer_code": "5573",
+      "aliases": ["Satco", "SATCO", "Satco Prod Inc", "Satco Prod Inc (5573)", "5573", "Nuvo", "Starfish"]
+    },
+    {
+      "brand_name": "Philips®",
+      "canonical_brand": "Philips®",
+      "brand_code": "PHIL",
+      "manufacturer_name": "Signify North America Corp",
+      "manufacturer_code": "5831",
+      "aliases": ["Philips", "PHILIPS", "Phillips Lighting", "Phillips Lighting (5831)", "5831", "Wiz"]
+    },
+    {
+      "brand_name": "Leviton®",
+      "canonical_brand": "Leviton®",
+      "brand_code": "LEVI",
+      "manufacturer_name": "Leviton Manufacturing Co Inc",
+      "manufacturer_code": "4927",
+      "aliases": ["Leviton", "LEVITON", "Leviton Mfg Co", "Leviton Mfg Co (4927)", "4927"]
+    },
+    {
+      "brand_name": "Southwire®",
+      "canonical_brand": "Southwire®",
+      "brand_code": "SOUT",
+      "manufacturer_name": "Southwire Company LLC",
+      "manufacturer_code": "6603",
+      "aliases": ["Southwire", "SOUTHWIRE", "Southwire/g Turner", "Southwire/g Turner (6603)", "6603", "Woods Wire Southwire", "Woods Wire Southwire (7579)", "7579"]
+    },
+    {
+      "brand_name": "Square D™",
+      "canonical_brand": "Square D™",
+      "brand_code": "SQD",
+      "manufacturer_name": "Schneider Electric USA Inc",
+      "manufacturer_code": "6825",
+      "aliases": ["Square D", "SQUARE D", "Square D Con Prod Dv", "Square D Con Prod Dv (6825)", "6825", "Schneider Electric"]
+    },
+    {
+      "brand_name": "Hunter®",
+      "canonical_brand": "Hunter®",
+      "brand_code": "HUNT",
+      "manufacturer_name": "Hunter Fan Company",
+      "manufacturer_code": "4381",
+      "aliases": ["Hunter", "HUNTER", "Hunter Fan Co", "Hunter Fan Co (4381)", "4381"]
+    },
+    {
+      "brand_name": "Feit Electric®",
+      "canonical_brand": "Feit Electric®",
+      "brand_code": "FEIT",
+      "manufacturer_name": "Feit Electric Company",
+      "manufacturer_code": "3468",
+      "aliases": ["Feit Electric", "FEIT ELECTRIC", "Feit Electric (3468)", "3468"]
+    },
+    {
+      "brand_name": "Bosch®",
+      "canonical_brand": "Bosch®",
+      "brand_code": "BOSC",
+      "manufacturer_name": "Robert Bosch Tool Corporation",
+      "manufacturer_code": "6564",
+      "aliases": ["Bosch", "BOSCH", "Robt Bosch Tool Corp", "Robt Bosch Tool Corp (6564)", "6564"]
+    },
+    {
+      "brand_name": "Dremel®",
+      "canonical_brand": "Dremel®",
+      "brand_code": "DREM",
+      "manufacturer_name": "Robert Bosch Tool Corporation",
+      "manufacturer_code": "6564",
+      "aliases": ["Dremel", "DREMEL"]
+    },
+    {
+      "brand_name": "Oliver®",
+      "canonical_brand": "Oliver®",
+      "brand_code": "OLIV",
+      "manufacturer_name": "Oliver Machinery Company",
+      "manufacturer_code": "OLIMA",
+      "aliases": ["Oliver", "OLIVER", "Oliver Machinery Company (OLIMA)", "OLIMA"]
+    },
+    {
+      "brand_name": "Jet®",
+      "canonical_brand": "Jet®",
+      "brand_code": "JETP",
+      "manufacturer_name": "JPW Industries Inc",
+      "manufacturer_code": "JPWIN",
+      "aliases": ["Jet", "JET", "JPW Industries", "JPW Industries (JPWIN)", "JPWIN", "JWBS"]
+    },
+    {
+      "brand_name": "Grizzly®",
+      "canonical_brand": "Grizzly®",
+      "brand_code": "GRIZ",
+      "manufacturer_name": "Woodstock International Inc",
+      "manufacturer_code": "3658",
+      "aliases": ["Grizzly", "GRIZZLY", "Woodstock Intl", "Woodstock Intl (3658)", "3658"]
+    },
+    {
+      "brand_name": "Amana Tool®",
+      "canonical_brand": "Amana Tool®",
+      "brand_code": "AMAN",
+      "manufacturer_name": "Amana Tool Corp",
+      "manufacturer_code": "AMATO",
+      "aliases": ["Amana", "Amana Tool", "Amana Tool Corp (AMATO)", "AMATO"]
+    },
+    {
+      "brand_name": "CMT®",
+      "canonical_brand": "CMT®",
+      "brand_code": "CMTO",
+      "manufacturer_name": "CMT USA Inc",
+      "manufacturer_code": "CMTUS",
+      "aliases": ["CMT", "CMT Orange Tools", "CMT USA Inc (CMTUS)", "CMTUS"]
+    },
+    {
+      "brand_name": "Vessel®",
+      "canonical_brand": "Vessel®",
+      "brand_code": "VESS",
+      "manufacturer_name": "Vessel Tools USA Inc",
+      "manufacturer_code": "VESTO",
+      "aliases": ["Vessel", "VESSEL", "Vessel Tools USA Inc (VESTO)", "VESTO"]
+    },
+    {
+      "brand_name": "Wera®",
+      "canonical_brand": "Wera®",
+      "brand_code": "WERA",
+      "manufacturer_name": "Wera Tools NA Inc",
+      "manufacturer_code": "WERTO",
+      "aliases": ["Wera", "WERA", "Wera Tools NA Inc (WERTO)", "WERTO"]
+    },
+    {
+      "brand_name": "Edge Eyewear®",
+      "canonical_brand": "Edge Eyewear®",
+      "brand_code": "EDGE",
+      "manufacturer_name": "Edge Eyewear Inc",
+      "manufacturer_code": "EDGSA",
+      "aliases": ["Edge Safety", "Edge Eyewear", "Edge Eyewear Inc (EDGSA)", "EDGSA"]
+    },
+    {
+      "brand_name": "ProVia®",
+      "canonical_brand": "ProVia®",
+      "brand_code": "PROV",
+      "manufacturer_name": "ProVia LLC",
+      "manufacturer_code": "PRODO",
+      "aliases": ["ProVia", "PROVIA", "ProVia (PRODO)", "PRODO"]
+    },
+    {
+      "brand_name": "James Hardie®",
+      "canonical_brand": "James Hardie®",
+      "brand_code": "HARD",
+      "manufacturer_name": "James Hardie Building Products Inc",
+      "manufacturer_code": "JAHAR",
+      "aliases": ["JAMESHARDIE", "James Hardie", "HardiePlank", "HardiePanel"]
+    },
+    {
+      "brand_name": "LP® SmartSide®",
+      "canonical_brand": "LP® SmartSide®",
+      "brand_code": "LPSM",
+      "manufacturer_name": "Louisiana-Pacific Corporation",
+      "manufacturer_code": "LOUPA",
+      "aliases": ["LP SMARTSIDE", "LP SmartSide", "SmartSide"]
+    },
+    {
+      "brand_name": "Lutron®",
+      "canonical_brand": "Lutron®",
+      "brand_code": "LUTR",
+      "manufacturer_name": "Lutron Electronics Co Inc",
+      "manufacturer_code": "FENBR",
+      "aliases": ["Lutron", "Lutron Dimmer", "Fenton Bros Electric Inc", "Fenton Bros Electric Inc (FENBR)", "FENBR"]
+    },
+    {
+      "brand_name": "Prime®",
+      "canonical_brand": "Prime®",
+      "brand_code": "PRIM",
+      "manufacturer_name": "Prime Wire & Cable Inc",
+      "manufacturer_code": "3562",
+      "aliases": ["Prime", "Prime Wire & Cable", "Prime Wire & Cable (3562)", "3562"]
+    },
+    {
+      "brand_name": "First Alert®",
+      "canonical_brand": "First Alert®",
+      "brand_code": "FSTA",
+      "manufacturer_name": "First Alert - B R K Brands",
+      "manufacturer_code": "2754",
+      "aliases": ["First Alert", "BRK", "First Alert - B R K Brands (2754)", "2754"]
+    },
+    {
+      "brand_name": "Woodpeckers®",
+      "canonical_brand": "Woodpeckers®",
+      "brand_code": "WOOD",
+      "manufacturer_name": "Woodpeckers Inc",
+      "manufacturer_code": "WOODP",
+      "aliases": ["Woodpeckers", "Woodpeckers Inc (WOODP)", "WOODP", "BigCal"]
+    },
+    {
+      "brand_name": "SawStop®",
+      "canonical_brand": "SawStop®",
+      "brand_code": "SAWS",
+      "manufacturer_name": "SawStop LLC",
+      "manufacturer_code": "SAWST",
+      "aliases": ["Saw Stop", "SawStop", "Saw Stop LLC (SAWST)", "SAWST"]
+    },
+    {
+      "brand_name": "Bow Products®",
+      "canonical_brand": "Bow Products®",
+      "brand_code": "BOWP",
+      "manufacturer_name": "Bow Products LLC",
+      "manufacturer_code": "BOWPR",
+      "aliases": ["Bow Products", "Bow Products (BOWPR)", "BOWPR", "XTENDER"]
+    },
+    {
+      "brand_name": "King Canada®",
+      "canonical_brand": "King Canada®",
+      "brand_code": "KING",
+      "manufacturer_name": "King Canada Inc",
+      "manufacturer_code": "KINCA",
+      "aliases": ["King Canada", "King Canada Inc (KINCA)", "KINCA", "Voyager"]
+    },
+    {
+      "brand_name": "Senco®",
+      "canonical_brand": "Senco®",
+      "brand_code": "SENC",
+      "manufacturer_name": "Senco Products Inc",
+      "manufacturer_code": "4650",
+      "aliases": ["Senco", "Senco Products Inc (4650)", "4650"]
+    },
+    {
+      "brand_name": "National Nail®",
+      "canonical_brand": "National Nail®",
+      "brand_code": "NATN",
+      "manufacturer_name": "National Nail Corp",
+      "manufacturer_code": "7439",
+      "aliases": ["National Nail", "National Nail Corp (7439)", "7439", "Paslode"]
+    },
+    {
+      "brand_name": "Huber®",
+      "canonical_brand": "Huber®",
+      "brand_code": "HUBR",
+      "manufacturer_name": "Huber Engineered Woods LLC",
+      "manufacturer_code": "3158",
+      "aliases": ["Huber", "Huber Eng Wood LLC", "Huber Eng Wood LLC (3158)", "3158", "Zip System", "Advantech"]
+    },
+    {
+      "brand_name": "CertainTeed®",
+      "canonical_brand": "CertainTeed®",
+      "brand_code": "CERT",
+      "manufacturer_name": "CertainTeed Gypsum Inc",
+      "manufacturer_code": "2765",
+      "aliases": ["CertainTeed", "Certainteed", "Certainteed Gypsum", "Certainteed Gypsum (2765)", "2765"]
+    },
+    {
+      "brand_name": "Hager®",
+      "canonical_brand": "Hager®",
+      "brand_code": "HAGE",
+      "manufacturer_name": "Hager Hinge Company",
+      "manufacturer_code": "4189",
+      "aliases": ["HAGER", "Hager", "Hager Hinge Co", "Hager Hinge Co (4189)", "4189"]
+    },
+    {
+      "brand_name": "Carlon®",
+      "canonical_brand": "Carlon®",
+      "brand_code": "CARL",
+      "manufacturer_name": "Thomas & Betts Corp",
+      "manufacturer_code": "7405",
+      "aliases": ["Carlon", "Thomas & Betts", "Thomas & Betts (7405)", "7405"]
+    },
+    {
+      "brand_name": "Cooper Lighting®",
+      "canonical_brand": "Cooper Lighting®",
+      "brand_code": "COOP",
+      "manufacturer_name": "Cooper Lighting LLC",
+      "manufacturer_code": "7638",
+      "aliases": ["Cooper Lighting", "Cooper Lighting (7638)", "7638", "Halo"]
+    },
+    {
+      "brand_name": "Lithonia Lighting®",
+      "canonical_brand": "Lithonia Lighting®",
+      "brand_code": "LITH",
+      "manufacturer_name": "Lithonia Lighting Inc",
+      "manufacturer_code": "2776",
+      "aliases": ["Lithonia Lighting", "Lithonia Lighting (2776)", "2776"]
+    },
+    {
+      "brand_name": "United Window & Door®",
+      "canonical_brand": "United Window & Door®",
+      "brand_code": "UNIW",
+      "manufacturer_name": "United Window & Door Manufacturing Inc",
+      "manufacturer_code": "UNIWI",
+      "aliases": ["United Window & Door", "United Window & Door Manufacturing (UNIWI)", "UNIWI", "United"]
+    },
+    {
+      "brand_name": "Velux®",
+      "canonical_brand": "Velux®",
+      "brand_code": "VELX",
+      "manufacturer_name": "Velux America Inc",
+      "manufacturer_code": "VELAM",
+      "aliases": ["Velux", "VELUX", "Velux America Inc (VELAM)", "VELAM"]
+    },
+    {
+      "brand_name": "Westwood Lumber®",
+      "canonical_brand": "Westwood Lumber®",
+      "brand_code": "WESL",
+      "manufacturer_name": "Westwood Lumber Sales Inc",
+      "manufacturer_code": "WESLU",
+      "aliases": ["Westwood Lumber Sales", "Westwood Lumber Sales (WESLU)", "WESLU", "Doug Fir"]
+    },
+    {
+      "brand_name": "Premier Metals®",
+      "canonical_brand": "Premier Metals®",
+      "brand_code": "PREM",
+      "manufacturer_name": "Premier Metals Inc",
+      "manufacturer_code": "PREME",
+      "aliases": ["Premier Metals", "Premier Metals (PREME)", "PREME"]
+    },
+    {
+      "brand_name": "Palmer-Donavin®",
+      "canonical_brand": "Palmer-Donavin®",
+      "brand_code": "PALM",
+      "manufacturer_name": "Palmer Donavin Mfg Company",
+      "manufacturer_code": "PALDO",
+      "aliases": ["Palmer Donavin", "Palmer Donavin Mfg Company (PALDO)", "PALDO", "DSI Westbury"]
+    },
+    {
+      "brand_name": "Streamlight®",
+      "canonical_brand": "Streamlight®",
+      "brand_code": "STRM",
+      "manufacturer_name": "Streamlight Inc",
+      "manufacturer_code": "7277",
+      "aliases": ["Streamlight", "Streamlight (7277)", "7277"]
+    },
+    {
+      "brand_name": "NEBO®",
+      "canonical_brand": "NEBO®",
+      "brand_code": "NEBO",
+      "manufacturer_name": "ACG Brands Inc",
+      "manufacturer_code": "1154",
+      "aliases": ["ACG Brands", "ACG Brands (1154)", "1154", "Slyde King"]
+    },
+    {
+      "brand_name": "Police Security®",
+      "canonical_brand": "Police Security®",
+      "brand_code": "POLS",
+      "manufacturer_name": "Police Security Flashlights Inc",
+      "manufacturer_code": "9470",
+      "aliases": ["Police Security", "Police Security (9470)", "9470"]
+    },
+    {
+      "brand_name": "Tech Gear 5.7®",
+      "canonical_brand": "Tech Gear 5.7®",
+      "brand_code": "TECG",
+      "manufacturer_name": "Tech Gear 5.7 Inc",
+      "manufacturer_code": "TECGE",
+      "aliases": ["Tech Gear 5.7", "Tech Gear 5.7 Inc (TECGE)", "TECGE", "UTW Pro"]
+    },
+    {
+      "brand_name": "Marshalltown®",
+      "canonical_brand": "Marshalltown®",
+      "brand_code": "MARS",
+      "manufacturer_name": "Marshalltown Trowel Co",
+      "manufacturer_code": "5155",
+      "aliases": ["Marshalltown Trowel", "Marshalltown Trowel (5155)", "5155", "Wal-Board"]
+    },
+    {
+      "brand_name": "Malco®",
+      "canonical_brand": "Malco®",
+      "brand_code": "MALC",
+      "manufacturer_name": "Malco Products SBC",
+      "manufacturer_code": "2370",
+      "aliases": ["Malco Prod", "Malco Prod (2370)", "2370"]
+    },
+    {
+      "brand_name": "Irwin®",
+      "canonical_brand": "Irwin®",
+      "brand_code": "IRWN",
+      "manufacturer_name": "Irwin Industrial Tools Inc",
+      "manufacturer_code": "5863",
+      "aliases": ["Irwin", "Irwin Industrial Tools", "Irwin Industrial Tools (5863)", "5863"]
+    },
+    {
+      "brand_name": "U.S. Tape®",
+      "canonical_brand": "U.S. Tape®",
+      "brand_code": "USTP",
+      "manufacturer_name": "U S Tape Company Inc",
+      "manufacturer_code": "6694",
+      "aliases": ["U S Tape Company", "U S Tape Company (6694)", "6694", "Century Components"]
+    },
+    {
+      "brand_name": "RDI®",
+      "canonical_brand": "RDI®",
+      "brand_code": "RDIC",
+      "manufacturer_name": "Barrette Outdoor Living / RDI",
+      "manufacturer_code": "RDIBL",
+      "aliases": ["RDI", "Finyline"]
+    }
+  ]
+}

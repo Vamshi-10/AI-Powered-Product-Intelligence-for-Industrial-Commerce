@@ -1,0 +1,139 @@
+{
+  "rules": {
+    "spacing": "Mandatory single space between numeric value and unit symbol (e.g. '24 in' not '24in' or '24 IN.')",
+    "fractions": "Imperial lengths and dimensions must use hyphenated fraction format (e.g. '50-1/4 in')",
+    "decimals": "Convert approved inch decimals to fractions using the 64ths lookup table"
+  },
+  "measurement_types": {
+    "length": {
+      "approved_unit": "in",
+      "canonical_uom": "Inch",
+      "synonyms": ["inches", "inch", "IN", "IN.", "in.", "\"", "''", "”", "“", "ins"]
+    },
+    "foot": {
+      "approved_unit": "ft",
+      "canonical_uom": "Foot",
+      "synonyms": ["feet", "foot", "FT", "FT.", "ft.", "'", "’", "fts"]
+    },
+    "millimeter": {
+      "approved_unit": "mm",
+      "canonical_uom": "Millimeter",
+      "synonyms": ["millimeters", "millimetre", "mm.", "MM"]
+    },
+    "centimeter": {
+      "approved_unit": "cm",
+      "canonical_uom": "Centimeter",
+      "synonyms": ["centimeters", "centimetre", "cm.", "CM"]
+    },
+    "meter": {
+      "approved_unit": "m",
+      "canonical_uom": "Meter",
+      "synonyms": ["meters", "metre", "m.", "M"]
+    },
+    "voltage": {
+      "approved_unit": "V",
+      "canonical_uom": "Volt",
+      "synonyms": ["volt", "volts", "v", "VDC", "VAC", "v.", "V."]
+    },
+    "amperage": {
+      "approved_unit": "A",
+      "canonical_uom": "Ampere",
+      "synonyms": ["amp", "amps", "ampere", "amperes", "a", "A.", "a."]
+    },
+    "amp_hour": {
+      "approved_unit": "Ah",
+      "canonical_uom": "Ampere Hour",
+      "synonyms": ["ah", "AH", "amp-hour", "amp hour", "amp-hours"]
+    },
+    "wattage": {
+      "approved_unit": "W",
+      "canonical_uom": "Watt",
+      "synonyms": ["watt", "watts", "w", "W.", "w."]
+    },
+    "kilowatt": {
+      "approved_unit": "kW",
+      "canonical_uom": "Kilowatt",
+      "synonyms": ["kilowatt", "kilowatts", "kw", "KW", "kW."]
+    },
+    "horsepower": {
+      "approved_unit": "hp",
+      "canonical_uom": "Horsepower",
+      "synonyms": ["horsepower", "HP", "hp.", "Hp"]
+    },
+    "sound_level": {
+      "approved_unit": "dBA",
+      "canonical_uom": "A-Weighted Decibels",
+      "synonyms": ["dba", "DBA", "db", "dB", "dBA.", "decibel", "decibels"]
+    },
+    "color_temperature": {
+      "approved_unit": "K",
+      "canonical_uom": "Kelvin",
+      "synonyms": ["k", "kelvin", "27k", "30k", "40k", "50k", "65k"]
+    },
+    "luminous_flux": {
+      "approved_unit": "lm",
+      "canonical_uom": "Lumen",
+      "synonyms": ["lumens", "lumen", "L", "lm.", "LM"]
+    },
+    "speed": {
+      "approved_unit": "rpm",
+      "canonical_uom": "Revolutions Per Minute",
+      "synonyms": ["RPM", "rpm.", "r.p.m.", "rev/min"]
+    },
+    "pressure": {
+      "approved_unit": "psi",
+      "canonical_uom": "Pounds per Square Inch",
+      "synonyms": ["PSI", "psi.", "lbs/sq in", "#", "150#"]
+    },
+    "flow_rate": {
+      "approved_unit": "gpm",
+      "canonical_uom": "Gallons Per Minute",
+      "synonyms": ["GPM", "gpm.", "gal/min"]
+    },
+    "volume_gallon": {
+      "approved_unit": "gal",
+      "canonical_uom": "Gallon",
+      "synonyms": ["gallons", "gallon", "gal.", "GAL"]
+    },
+    "volume_quart": {
+      "approved_unit": "qt",
+      "canonical_uom": "Quart",
+      "synonyms": ["quarts", "quart", "qt.", "QT"]
+    },
+    "volume_ounce": {
+      "approved_unit": "oz",
+      "canonical_uom": "Fluid Ounce",
+      "synonyms": ["fl oz", "ounce", "ounces", "oz.", "OZ"]
+    },
+    "weight_pound": {
+      "approved_unit": "lb",
+      "canonical_uom": "Pound",
+      "synonyms": ["lbs", "pound", "pounds", "lb.", "LB"]
+    },
+    "frequency": {
+      "approved_unit": "Hz",
+      "canonical_uom": "Hertz",
+      "synonyms": ["hz", "HZ", "hertz"]
+    },
+    "teeth_count": {
+      "approved_unit": "T",
+      "canonical_uom": "Teeth",
+      "synonyms": ["tooth", "teeth", "TPI", "tpi", "Teeth"]
+    },
+    "gauge": {
+      "approved_unit": "ga",
+      "canonical_uom": "Gauge",
+      "synonyms": ["GA", "gauge", "ga.", "g"]
+    },
+    "grit": {
+      "approved_unit": "Grit",
+      "canonical_uom": "Grit",
+      "synonyms": ["grit", "GRIT", "P80", "P120", "P150", "P180", "P220", "P320"]
+    },
+    "package_quantity": {
+      "approved_unit": "pc",
+      "canonical_uom": "Pieces",
+      "synonyms": ["pc", "pcs", "piece", "pieces", "pk", "pack", "ct", "count", "box", "set"]
+    }
+  }
+}
