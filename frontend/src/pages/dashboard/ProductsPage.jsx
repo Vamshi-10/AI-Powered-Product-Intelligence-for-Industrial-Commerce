@@ -223,6 +223,32 @@ export default function ProductsPage() {
                 </>
               )}
             </div>
+            
+            <button 
+              className="btn-secondary"
+              title="Pull latest live AI-processed items from backend"
+              onClick={async () => {
+                const list = await productService.fetchFromBackend();
+                setProducts(list);
+              }}
+              style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.78rem' }}
+            >
+              🔄 Sync Live Backend
+            </button>
+
+            <button 
+              className="btn-ghost"
+              title="Clear all duplicate mock records"
+              onClick={() => {
+                if (window.confirm('Clear current workspace catalog to start fresh?')) {
+                  const empty = productService.clearAll();
+                  setProducts(empty);
+                }
+              }}
+              style={{ color: '#EF4444', fontSize: '0.78rem' }}
+            >
+              🗑️ Clear Catalog
+            </button>
           </div>
         </div>
       </div>

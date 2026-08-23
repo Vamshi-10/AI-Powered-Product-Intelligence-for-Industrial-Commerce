@@ -157,6 +157,52 @@ class ProductService {
   }
 
   /**
+   * Clear all products from storage (empty workspace)
+   */
+  clearAll() {
+    this.products = [];
+    this.save();
+    return this.products;
+  }
+
+  /**
+   * Fetch live ingested products directly from FastAPI backend
+   */
+  async fetchFromBackend() {
+    try {
+      const res = await fetch('http://localhost:8000/products');
+      if (res.ok) {
+        const data = await res.json();
+        if (Array.isArray(data) && data.length > 0) {
+          const mapped = data.map(p => ({
+            id: p.identity?.product_id || p.id || `prod-${Date.now()}`,
+            sku: p.identity?.mpn || p.sku || 'SKU-UNKNOWN',
+            name: p.content?.product_title || p.name || 'Industrial Product',
+            category: p.classification?.product_class || p.category || 'Industrial Equipment',
+            manufacturer: p.identity?.manufacturer_resolved || p.manufacturer || 'Standard Manufacturer',
+            status: 'Validated',
+            lastUpdated: new Date().toISOString().split('T')[0],
+            qualityScore: 95,
+            confidenceScore: 95,
+            specifications: (p.attributes || []).reduce((acc, a) => {
+              acc[a.name] = `${a.normalized_value || a.raw_value} ${a.uom || ''}`.trim();
+              return acc;
+            }, {}),
+            sources: [{ id: 'SRC-LIVE', type: 'catalog', name: 'Live Ingested Catalog' }],
+            evidence: {}
+          }));
+          this.products = mapped;
+          this.save();
+          return this.products;
+        }
+      }
+    } catch (e) {
+      console.warn('Could not fetch from backend:', e);
+    }
+    return this.products;
+  }
+
+  /**
    * Reset to initial seed products
    */
   resetProducts() {

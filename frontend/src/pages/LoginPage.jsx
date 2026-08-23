@@ -122,7 +122,9 @@ const LoginPage = () => {
   const handleGoogleSignIn = async () => {
     if (setAuthError) setAuthError(null);
     const res = await loginWithGoogle();
-    if (!res.success && res.error) {
+    if (res && res.success) {
+      navigate(fromDestination || '/dashboard', { replace: true });
+    } else if (res && res.error) {
       setOauthNotice(res.error);
     }
   };
@@ -130,7 +132,9 @@ const LoginPage = () => {
   const handleMicrosoftSignIn = async () => {
     if (setAuthError) setAuthError(null);
     const res = await loginWithMicrosoft();
-    if (!res.success && res.error) {
+    if (res && res.success) {
+      navigate(fromDestination || '/dashboard', { replace: true });
+    } else if (res && res.error) {
       setOauthNotice(res.error);
     }
   };

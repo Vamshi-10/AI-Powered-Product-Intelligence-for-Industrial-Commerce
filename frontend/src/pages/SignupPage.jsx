@@ -82,22 +82,28 @@ const SignupPage = () => {
       });
 
       if (result && result.success) {
-        setSuccessMessage(result.message || 'Account registered successfully! Redirecting to sign in...');
+        setSuccessMessage(result.message || 'Account registered successfully! Redirecting to workspace...');
         setTimeout(() => {
-          navigate('/login');
-        }, 2000);
+          navigate('/dashboard', { replace: true });
+        }, 800);
       }
     }
   };
 
   const handleGoogleSignUp = async () => {
     if (setAuthError) setAuthError(null);
-    await loginWithGoogle();
+    const res = await loginWithGoogle();
+    if (res && res.success) {
+      navigate('/dashboard', { replace: true });
+    }
   };
 
   const handleMicrosoftSignUp = async () => {
     if (setAuthError) setAuthError(null);
-    await loginWithMicrosoft();
+    const res = await loginWithMicrosoft();
+    if (res && res.success) {
+      navigate('/dashboard', { replace: true });
+    }
   };
 
   return (
