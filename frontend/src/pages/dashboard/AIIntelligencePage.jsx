@@ -19,42 +19,41 @@ const TABS = [
 ];
 
 const RECENT_PROCESSING = [
-  { file: 'Pump_Datasheet.pdf', status: 'Completed', count: 42, time: '2 min ago', type: 'done' },
-  { file: 'Valve_Catalog.xlsx', status: 'Completed', count: 38, time: '12 min ago', type: 'done' },
-  { file: 'Motor_Spec.pdf', status: 'Processing', count: 24, time: 'Now', type: 'active' },
-  { file: 'Gearbox_Datasheet.pdf', status: 'Needs Attention', count: 18, time: '35 min ago', type: 'error' },
+  { file: 'Diablo_Abrasives_Batch.csv', status: 'Completed', count: 48, time: '1 min ago', type: 'done' },
+  { file: 'Philips_Lighting_Catalog.csv', status: 'Completed', count: 85, time: '5 min ago', type: 'done' },
+  { file: 'Makita_PowerTools_Spec.csv', status: 'Completed', count: 68, time: '10 min ago', type: 'done' },
+  { file: 'Hunter_Fans_Industrial.csv', status: 'Completed', count: 38, time: '20 min ago', type: 'done' },
 ];
 
 const AI_RESULTS_DATA = {
-  'Grundfos CR 15-4 Pump': [
-    { attr: 'Material', raw: 'SS304', extracted: 'SS304', enriched: 'Stainless Steel AISI 304', improvement: 'Terminology Standardized', source: 'Datasheet.pdf — Page 6', page: 6, status: 'Validated' },
-    { attr: 'Power', raw: '5.5 HP', extracted: '5.5 HP', enriched: '4.1 kW', improvement: 'Unit Normalized', source: 'Datasheet.pdf — Page 3', page: 3, status: 'Validated' },
-    { attr: 'Flow Rate', raw: '15 m3/h', extracted: '15 m3/h', enriched: '15 m³/h', improvement: 'Format Cleanup', source: 'Datasheet.pdf — Page 4', page: 4, status: 'Validated' },
-    { attr: 'Pressure', raw: '10MPa', extracted: '10MPa', enriched: '10 MPa', improvement: 'Format Cleanup', source: 'Image Tag', page: 1, status: 'Validated' },
-    { attr: 'Operating Pressure', raw: 'ambig', extracted: 'ambig', enriched: '10 bar', improvement: 'Inferred', source: 'Datasheet.pdf — Page 2', page: 2, status: 'Needs Review', reason: 'Ambiguous source' }
+  'Diablo DCB518ASTS06G Sanding Belt': [
+    { attr: 'Width', raw: '1/2"', extracted: '1/2"', enriched: '0.5 in', improvement: 'Fraction to Decimal UOM', source: 'sample_raw_items.csv — Line 1', page: 1, status: 'Validated' },
+    { attr: 'Length', raw: '18"', extracted: '18"', enriched: '18 in', improvement: 'Unit Normalized', source: 'sample_raw_items.csv — Line 1', page: 1, status: 'Validated' },
+    { attr: 'Pack Quantity', raw: '6pc', extracted: '6pc', enriched: '6 pc', improvement: 'Count Standardized', source: 'sample_raw_items.csv — Line 1', page: 1, status: 'Validated' },
+    { attr: 'Brand', raw: '-- Unbranded --', extracted: 'Diablo', enriched: 'Diablo', improvement: 'Brand Recovered from Text', source: 'AI Smart Router', page: 1, status: 'Validated' },
+    { attr: 'UNSPSC Code', raw: 'None', extracted: '31191500', enriched: '31191500 (Abrasives)', improvement: 'Taxonomy Inferred', source: 'Gemini 3 Flash', page: 1, status: 'Validated' }
   ],
-  'Siemens SIMOTICS GP Motor': [
-    { attr: 'Power Rating', raw: '15kW / 20HP', extracted: '15 kW', enriched: '15 kW (20 HP)', improvement: 'Attribute Standardized', source: '1LE1_Motor_Spec.pdf — Page 1', page: 1, status: 'Validated' },
-    { attr: 'Rated Speed', raw: '1470RPM', extracted: '1470RPM', enriched: '1470 RPM', improvement: 'Format Cleanup', source: '1LE1_Motor_Spec.pdf — Page 1', page: 1, status: 'Validated' },
-    { attr: 'Efficiency Class', raw: 'Premium', extracted: 'Premium', enriched: 'IE3 Premium', improvement: 'Terminology Standardized', source: '1LE1_Motor_Spec.pdf — Page 2', page: 2, status: 'Validated' },
-    { attr: 'Mounting Type', raw: 'Foot', extracted: 'Foot', enriched: 'IM B3 (Foot)', improvement: 'Terminology Standardized', source: '1LE1_Motor_Spec.pdf — Page 2', page: 2, status: 'Needs Review', reason: 'Inferred value' }
+  'Makita XLC10ZW 18V Cordless Vacuum': [
+    { attr: 'Voltage', raw: '18V', extracted: '18V', enriched: '18 V', improvement: 'Electrical Standardized', source: 'unihack_batch.csv — Line 12', page: 1, status: 'Validated' },
+    { attr: 'Battery System', raw: 'LXT', extracted: 'LXT', enriched: '18V LXT Lithium-Ion', improvement: 'Terminology Enriched', source: 'unihack_batch.csv — Line 12', page: 1, status: 'Validated' },
+    { attr: 'Tool Status', raw: 'Bare', extracted: 'Bare', enriched: 'Bare Tool (No Battery)', improvement: 'Commercial Standardized', source: 'unihack_batch.csv — Line 12', page: 1, status: 'Validated' },
+    { attr: 'Power Source', raw: 'Cordless', extracted: 'Cordless', enriched: 'Cordless / Battery Powered', improvement: 'Format Cleanup', source: 'unihack_batch.csv — Line 12', page: 1, status: 'Validated' }
   ],
-  'Rosemount 3051S Transmitter': [
-    { attr: 'Pressure Range', raw: '-100 to 25 bar', extracted: '-100 to 25 bar', enriched: '-100 to 25 bar', improvement: 'No Change', source: '3051S_Datasheet.pdf — Page 2', page: 2, status: 'Validated' },
-    { attr: 'Accuracy', raw: '0.025%', extracted: '0.025%', enriched: '±0.025% of span', improvement: 'Format Cleanup', source: '3051S_Datasheet.pdf — Page 2', page: 2, status: 'Validated' },
-    { attr: 'Output Signal', raw: '4-20mA HART', extracted: '4-20mA', enriched: '4-20 mA HART', improvement: 'Format Cleanup', source: '3051S_Datasheet.pdf — Page 3', page: 3, status: 'Validated' },
-    { attr: 'Wetted Material', raw: 'Hastelloy C', extracted: 'Hastelloy C', enriched: 'Hastelloy C-276', improvement: 'Terminology Standardized', source: '3051S_Datasheet.pdf — Page 4', page: 4, status: 'Needs Review', reason: 'Ambiguous source' }
+  'Philips 574012 75W LED Bulb 2-Pack': [
+    { attr: 'Wattage Equivalent', raw: '75W', extracted: '75W', enriched: '75 W', improvement: 'Power UOM Normalized', source: 'unihack_batch.csv — Line 45', page: 1, status: 'Validated' },
+    { attr: 'Bulb Shape', raw: 'ST19', extracted: 'ST19', enriched: 'ST19 Vintage Filament', improvement: 'Form Factor Enriched', source: 'unihack_batch.csv — Line 45', page: 1, status: 'Validated' },
+    { attr: 'Color Temperature', raw: '50k', extracted: '50k', enriched: '5000 K (Daylight)', improvement: 'Color Kelvin Normalized', source: 'unihack_batch.csv — Line 45', page: 1, status: 'Validated' },
+    { attr: 'Package Quantity', raw: '2pk', extracted: '2pk', enriched: '2 pc', improvement: 'Unit Standardized', source: 'unihack_batch.csv — Line 45', page: 1, status: 'Validated' }
   ]
 };
 
 const CONFIDENCE_DATA = [
-  { product: 'Grundfos Pump', attr: 'Flow Rate', confidence: 97, level: 'High', reason: 'Clear source value' },
-  { product: 'Emerson Transmitter', attr: 'Operating Pressure', confidence: 64, level: 'Low', reason: 'Ambiguous source text' },
-  { product: 'ABB Drive', attr: 'Efficiency Class', confidence: 88, level: 'Medium', reason: 'Standardization required' },
-  { product: 'Siemens ET 200SP', attr: 'I/O Points', confidence: 91, level: 'High', reason: 'Clear datasheet specification' },
-  { product: 'ABB Drive', attr: 'Output Power', confidence: 94, level: 'High', reason: 'Clear value in table' },
-  { product: 'ABB Drive', attr: 'Mounting Style', confidence: 64, level: 'Low', reason: 'Inferred value' },
-  { product: 'Emerson DeltaV System', attr: 'Control Loops', confidence: 72, level: 'Low', reason: 'Inferred value' },
+  { product: 'Diablo Sanding Belt', attr: 'Width', confidence: 98, level: 'High', reason: 'Explicit dimensional extraction' },
+  { product: 'Diablo Sanding Belt', attr: 'Brand Resolution', confidence: 99, level: 'High', reason: 'Deterministic brand alias match' },
+  { product: 'Makita Cordless Vac', attr: 'Voltage', confidence: 96, level: 'High', reason: 'Standard electrical unit validation' },
+  { product: 'Philips LED Bulb', attr: 'Color Temperature', confidence: 95, level: 'High', reason: '50k mapped to 5000 K standard' },
+  { product: 'Hunter Ceiling Fan', attr: 'Blade Span', confidence: 94, level: 'High', reason: '44 inch diameter recognized' },
+  { product: 'Café Induction Cooktop', attr: 'Width', confidence: 97, level: 'High', reason: '30 inch standard enclosure' },
 ];
 
 export default function AIIntelligencePage() {
