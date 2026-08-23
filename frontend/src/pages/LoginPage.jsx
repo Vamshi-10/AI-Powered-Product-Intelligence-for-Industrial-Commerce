@@ -321,7 +321,7 @@ const LoginPage = () => {
                       type="text"
                       maxLength={6}
                       className={`auth-input ${errors.otp ? 'auth-input-error' : ''}`}
-                      placeholder="e.g. 123456"
+                      placeholder="Enter 6-digit code or 123456"
                       value={otpCode}
                       onChange={(e) => { setOtpCode(e.target.value); if (errors.otp) setErrors({ ...errors, otp: '' }); }}
                     />
@@ -344,6 +344,20 @@ const LoginPage = () => {
                     {otpSent ? 'Resend' : 'Send Code'}
                   </button>
                 </div>
+                {otpSent && (
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '6px' }}>
+                    <span style={{ fontSize: '0.75rem', color: '#a78bfa' }}>
+                      💡 Verification code: <strong style={{ color: '#ffffff', letterSpacing: '1px' }}>123456</strong>
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => setOtpCode('123456')}
+                      style={{ background: 'none', border: 'none', color: '#c084fc', fontSize: '0.75rem', textDecoration: 'underline', cursor: 'pointer', padding: 0 }}
+                    >
+                      Autofill Code
+                    </button>
+                  </div>
+                )}
                 {errors.otp && (
                   <span className="auth-field-error" role="alert">
                     <AlertCircle size={13} />{errors.otp}
