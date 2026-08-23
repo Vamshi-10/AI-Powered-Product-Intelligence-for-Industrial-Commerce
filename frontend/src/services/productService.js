@@ -1,20 +1,19 @@
-import { INITIAL_PRODUCTS } from './mockDataService';
-
 class ProductService {
   constructor() {
     this.storageKey = 'adharra_products';
-    // Initialize from localStorage or seed once
+    this.products = [];
     const stored = localStorage.getItem(this.storageKey);
     if (stored) {
       try {
         this.products = JSON.parse(stored);
       } catch (e) {
-        this.products = [...INITIAL_PRODUCTS];
-        this.save();
+        this.products = [];
       }
-    } else {
-      this.products = [...INITIAL_PRODUCTS];
-      this.save();
+    }
+    
+    // Auto-fetch real live backend items if empty
+    if (this.products.length === 0) {
+      this.fetchFromBackend();
     }
   }
 
