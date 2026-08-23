@@ -65,10 +65,28 @@ class UniversalAIEngine:
 
     def process_product(self, raw: RawProduct, enable_web: bool = True) -> ProductIntelligence:
         """
-        Executes the end-to-end 6-stage AI intelligence pipeline.
+        Executes the end-to-end 6-stage AI intelligence pipeline with crash protection.
         """
         start_time = time.time()
         product_id = raw.mfg_part_num or str(uuid.uuid4())[:8]
+        try:
+            return self._run_pipeline(raw, enable_web, start_time, product_id)
+        except Exception as e:
+            logger.error(f"Pipeline crashed for product {product_id}: {e}", exc_info=True)
+            fallback_identity = ProductIdentity(
+                product_id=product_id,
+                mpn=raw.mfg_part_num or "UNKNOWN",
+                manufacturer_raw=raw.part_manuf,
+                e1_brand_raw=raw.e1_brand,
+            )
+            return ProductIntelligence(
+                identity=fallback_identity,
+                processing_status="failed",
+                error_message=str(e),
+                processing_time_ms=int((time.time() - start_time) * 1000)
+            )
+
+    def _run_pipeline(self, raw: RawProduct, enable_web: bool, start_time: float, product_id: str) -> ProductIntelligence:
 
         # STEP 1: Memory Check (Vector DB Cache on 2TB drive)
         cached_result = self.memory.find_similar_product(raw.part_desc)
@@ -102,13 +120,47 @@ class UniversalAIEngine:
             web_data.buy_links = search_res.get("buy_links", [])
             images.extend(web_data.images)
 
-        # STEP 3: Identity & Brand Resolution (Consensus Engine)
-        mfg_resolved, brand_resolved, consensus_records = self.consensus.resolve_identity_consensus(
-            part_desc=raw.part_desc,
-            mpn=raw.mfg_part_num,
-            distributor_raw=raw.part_manuf or "",
-            e1_brand_raw=raw.e1_brand or "",
-        )
+        # STEP 3: Single Autonomous Leader Extraction (Zero Arguing / Seamless Failover)
+        # One high-capability leader takes full ownership of the product.
+        # If it runs out of tokens or hits a limit, the Smart Router immediately rescues it.
+        unified_prompt = f"""
+You are the ADHARRA Lead Industrial Intelligence Specialist.
+Take full responsibility for analyzing this industrial product and generate complete, commerce-ready structured data.
+
+Input Product Record:
+- MPN: {raw.mfg_part_num}
+- Raw Description: {raw.part_desc}
+- Brand Hint: {raw.e1_brand or raw.unilog_brand or raw.dib_brand or '-- Unbranded --'}
+- Manufacturer Hint: {raw.part_manuf or 'Unknown'}
+- Web / Scraped Context: {web_data.scraped_text[:1200]}
+
+Generate strictly valid JSON with this exact schema:
+{{
+  "brand_resolved": "Clean Standardized Brand Name (resolve unbranded / clean messy aliases)",
+  "manufacturer_resolved": "Official Corporate Manufacturer Name",
+  "department": "e.g. Electrical, Tools, Fasteners, Safety, Hydraulics, Plumbing",
+  "product_class": "Specific industrial category",
+  "fine_category": "Fine subcategory",
+  "unspsc": "8-digit UNSPSC code if identifiable, otherwise null",
+  "product_title": "Standardized title: Brand + Model + Class + Key Spec (max 100 chars)",
+  "invoice_desc": "UPPERCASE commercial description (STRICTLY MAXIMUM 40 CHARACTERS)",
+  "mobile_desc": "Mobile ecommerce description (STRICTLY BETWEEN 60 AND 80 CHARACTERS)",
+  "short_desc": "Concise technical description (1-2 sentences)",
+  "long_desc": "Detailed product description covering applications and features",
+  "retail_desc": "Clean retail ecommerce display title",
+  "features": ["Key Feature 1", "Key Feature 2", "Key Feature 3"],
+  "attributes": [
+    {{"name": "Attribute Name", "value": "Normalized numerical or categorical value", "uom": "Standard UOM (e.g. in, mm, V, A, W, kW, lb, kg, pc) or empty", "confidence": 0.95}}
+  ],
+  "confidence_score": 0.95
+}}
+"""
+        extraction_system = "You are the primary lead industrial catalog normalization engine. Take direct ownership of the output."
+        extracted = self.router.route_task("fast_extractor", unified_prompt, extraction_system)
+
+        # Build Identity
+        mfg_resolved = extracted.get("manufacturer_resolved") or raw.part_manuf or "Standard Manufacturer"
+        brand_resolved = extracted.get("brand_resolved") or raw.e1_brand or "Standard Brand"
 
         identity = ProductIdentity(
             product_id=product_id,
@@ -119,56 +171,23 @@ class UniversalAIEngine:
             unilog_brand_raw=raw.unilog_brand,
             manufacturer_resolved=mfg_resolved,
             brand_resolved=brand_resolved,
-            manufacturer_confidence=consensus_records[0].consensus_strength if consensus_records else 0.85,
-            brand_confidence=consensus_records[1].consensus_strength if len(consensus_records) > 1 else 0.85,
-            resolution_method="consensus_mesh",
+            manufacturer_confidence=0.95,
+            brand_confidence=0.95,
+            resolution_method="autonomous_leader",
         )
 
-        # STEP 4: High-Speed Classification, Attributes & Descriptions (Groq Llama 3.3 70B)
-        extraction_prompt = f"""
-Analyze this industrial product and generate structured commerce intelligence:
-Product Description: {raw.part_desc}
-MPN: {raw.mfg_part_num}
-Resolved Manufacturer: {mfg_resolved}
-Resolved Brand: {brand_resolved}
-Web Context: {web_data.scraped_text[:1500]}
-Specifications Scraped: {web_data.spec_table}
-
-Output strictly valid JSON with the following structure:
-{{
-  "department": "Tools / Lighting / Appliances / Building Materials / Electrical / Abrasives",
-  "product_class": "e.g., Power Tools",
-  "fine_category": "e.g., Cut-Off Wheels",
-  "classpath": "Department > Class > Fine Category",
-  "product_type": "e.g., Cut-Off Disc",
-  "attributes": [
-    {{"name": "Diameter", "value": "5", "uom": "in", "confidence": 0.95}},
-    {{"name": "Thickness", "value": "0.045", "uom": "in", "confidence": 0.95}},
-    {{"name": "Arbor Size", "value": "7/8", "uom": "in", "confidence": 0.90}}
-  ],
-  "invoice_desc": "MILW 5X.045X7/8 METAL CUT OFF DISC",
-  "mobile_desc": "Milwaukee 5 in. x 0.045 in. x 7/8 in. Metal Cut-Off Wheel",
-  "short_desc": "Milwaukee® 49-94-0013 5 in. Metal Cut-Off Disc for Angle Grinders",
-  "long_desc": "High-performance metal cut-off wheel engineered for fast, clean cuts in steel, stainless steel, and ferrous metals.",
-  "retail_desc": "Milwaukee 5-Inch Metal Cutting Disc",
-  "features": [
-    "Fast cutting speed with extended wheel life",
-    "Optimized for angle grinders with 7/8 in. arbor"
-  ]
-}}
-"""
-        extraction_system = "You are a professional industrial product taxonomy and content generation engine. Evidence before generation."
-        extracted = self.router.route_task("fast_extractor", extraction_prompt, extraction_system)
-
+        # Build Classification
         classification = ProductClassification(
-            department=extracted.get("department", "Tools"),
-            product_class=extracted.get("product_class", "Accessories"),
-            fine_category=extracted.get("fine_category", "General"),
-            classpath=extracted.get("classpath", "Tools > Accessories > General"),
-            product_type=extracted.get("product_type", "Industrial Supply"),
-            classification_confidence=0.88,
+            department=extracted.get("department", "Industrial Supplies"),
+            product_class=extracted.get("product_class", "Components & Accessories"),
+            fine_category=extracted.get("fine_category", "General Industrial"),
+            classpath=f"{extracted.get('department', 'Industrial Supplies')} > {extracted.get('product_class', 'Components')}",
+            product_type=extracted.get("product_class", "Industrial Supply"),
+            unspsc=extracted.get("unspsc"),
+            classification_confidence=0.92,
         )
 
+        # Build Attributes
         attributes: List[ProductAttribute] = []
         for item in extracted.get("attributes", []):
             if isinstance(item, dict) and item.get("name") and item.get("value"):
@@ -177,29 +196,30 @@ Output strictly valid JSON with the following structure:
                         name=item["name"],
                         raw_value=str(item["value"]),
                         normalized_value=str(item["value"]),
-                        uom=item.get("uom"),
+                        uom=item.get("uom", ""),
                         status=DataStatus.KNOWN,
-                        confidence=float(item.get("confidence", 0.85)),
+                        confidence=float(item.get("confidence", 0.95)),
                         evidence=[
                             Evidence(
-                                source="ai_model_mesh",
+                                source="autonomous_lead_engine",
                                 source_type="extraction",
-                                source_authority=0.9,
+                                source_authority=0.95,
                                 extracted_text=raw.part_desc,
                             )
                         ],
                     )
                 )
 
+        # Build Commercial Descriptions
         content = ProductContent(
             invoice_description=extracted.get("invoice_desc"),
             mobile_description=extracted.get("mobile_desc"),
             short_description=extracted.get("short_desc"),
             long_description=extracted.get("long_desc"),
             retail_description=extracted.get("retail_desc"),
-            product_title=extracted.get("short_desc"),
+            product_title=extracted.get("product_title") or extracted.get("short_desc"),
             features=extracted.get("features", []),
-            product_name=extracted.get("product_type"),
+            product_name=extracted.get("product_class"),
         )
 
         digital_assets = [

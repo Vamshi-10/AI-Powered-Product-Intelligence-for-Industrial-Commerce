@@ -12,11 +12,41 @@ export const AuthProvider = ({ children }) => {
 
   const isGuest = sessionMode === 'guest';
 
-  // Sync state on load
+  // Sync state and listen to live Google/Microsoft OAuth redirects
   useEffect(() => {
     setIsAuthenticated(authService.isAuthenticated());
     setSessionMode(localStorage.getItem('adharra_session_mode') || null);
     setUser(authService.getCurrentUser());
+
+    const setupOAuthListener = async () => {
+      try {
+        const { supabase } = await import('../services/supabaseClient.js');
+        if (supabase && import.meta.env.VITE_SUPABASE_URL) {
+          const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+            if (session && session.user) {
+              const profile = {
+                id: session.user.id,
+                email: session.user.email,
+                name: session.user.user_metadata?.full_name || session.user.email.split('@')[0],
+                avatar: session.user.user_metadata?.avatar_url || null,
+                role: 'Verified Industrial User',
+                provider: session.user.app_metadata?.provider || 'google'
+              };
+              localStorage.setItem('adharra_token', session.access_token);
+              localStorage.setItem('adharra_user', JSON.stringify(profile));
+              setIsAuthenticated(true);
+              setUser(profile);
+            } else if (event === 'SIGNED_OUT') {
+              setIsAuthenticated(false);
+              setUser(null);
+            }
+          });
+          return () => subscription?.unsubscribe();
+        }
+      } catch (e) {}
+    };
+
+    setupOAuthListener();
   }, []);
 
   /**
@@ -101,6 +131,49 @@ export const AuthProvider = ({ children }) => {
   };
 
   /**
+   * Send Email OTP code
+   */
+  const sendEmailOtp = async (email) => {
+    setIsLoading(true);
+    setAuthError(null);
+    try {
+      const result = await authService.sendEmailOtp(email);
+      return result;
+    } catch (err) {
+      const msg = err.message || 'Failed to send OTP code.';
+      setAuthError(msg);
+      return { success: false, error: msg };
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  /**
+   * Verify Email OTP code and log in
+   */
+  const verifyEmailOtp = async (email, code) => {
+    setIsLoading(true);
+    setAuthError(null);
+    try {
+      const result = await authService.verifyEmailOtp(email, code);
+      if (result.success) {
+        setIsAuthenticated(true);
+        setUser(result.user || { email, role: 'Verified User' });
+        return { success: true };
+      } else {
+        setAuthError(result.error || 'Verification code failed.');
+        return { success: false, error: result.error };
+      }
+    } catch (err) {
+      const msg = err.message || 'Verification failed.';
+      setAuthError(msg);
+      return { success: false, error: msg };
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  /**
    * Forgot password handler
    */
   const forgotPassword = async (email) => {
@@ -159,6 +232,8 @@ export const AuthProvider = ({ children }) => {
         register,
         loginWithGoogle,
         loginWithMicrosoft,
+        sendEmailOtp,
+        verifyEmailOtp,
         forgotPassword,
         logout,
         sessionMode,

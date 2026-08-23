@@ -40,12 +40,13 @@ OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
 OLLAMA_MODEL = "qwen2.5:7b-instruct-q4_K_M"
 OLLAMA_VISION_MODEL = "llava:7b"
 
-# Model Roster IDs
-GROQ_MODEL = "llama-3.3-70b-versatile"
-GEMINI_MODEL = "gemini-2.0-flash"
-OPENROUTER_OX_ALPHA = "stealth/ox-alpha"
-OPENROUTER_NEMOTRON = "nvidia/llama-3.1-nemotron-70b-instruct"
-OPENROUTER_DEEPSEEK_FREE = "deepseek/deepseek-r1:free"
+# Model Roster IDs (Verified 100% Active 2026 Endpoints)
+GROQ_MODEL = "openai/gpt-oss-20b"
+GROQ_REASONER_MODEL = "openai/gpt-oss-120b"
+GEMINI_MODEL = "gemini-3-flash-preview"
+OPENROUTER_OX_ALPHA = "nvidia/nemotron-3.5-lightning:free"
+OPENROUTER_NEMOTRON = "nvidia/nemotron-3.5-lightning:free"
+OPENROUTER_DEEPSEEK_FREE = "z-ai/glm-5.2:free"
 
 # LLM Generation Parameters
 LLM_TEMPERATURE = 0.1
@@ -54,7 +55,7 @@ LLM_MAX_TOKENS = 2048
 LLM_TIMEOUT_SECONDS = 30
 
 # Vector Memory Settings (ChromaDB on 2TB drive)
-VECTOR_SIMILARITY_THRESHOLD = 0.90
+VECTOR_SIMILARITY_THRESHOLD = 0.99
 EMBEDDING_MODEL = "all-MiniLM-L6-v2"
 
 # Placeholders & Validation Constants

@@ -56,8 +56,13 @@ class ProductVectorMemory:
         if not self.collection or not self.embedder:
             return {"found": False}
 
+        if not description or not description.strip():
+            return {"found": False}
+
         try:
-            embedding = self.embedder.encode(description).tolist()
+            # Normalize text to improve cache hit rate (ignore extra spacing/newlines)
+            normalized_desc = " ".join(description.strip().split())
+            embedding = self.embedder.encode(normalized_desc).tolist()
             results = self.collection.query(
                 query_embeddings=[embedding],
                 n_results=1,
@@ -87,12 +92,17 @@ class ProductVectorMemory:
         if not self.collection or not self.embedder:
             return
 
+        if not description or not description.strip():
+            return
+
         try:
-            embedding = self.embedder.encode(description).tolist()
+            # Normalize text to match search format
+            normalized_desc = " ".join(description.strip().split())
+            embedding = self.embedder.encode(normalized_desc).tolist()
             self.collection.upsert(
                 ids=[product_id],
                 embeddings=[embedding],
-                documents=[description],
+                documents=[normalized_desc],
                 metadatas=[{"enriched_record": json.dumps(enriched_record)}],
             )
             logger.info(f"💾 Saved product {product_id} to Vector Memory on 2TB drive.")

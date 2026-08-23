@@ -3,7 +3,7 @@ Canonical Shared Schemas for AI Product Intelligence Platform
 Owned by Vamshi Krishna (AI Engine Developer & Project Lead)
 """
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 from typing import Optional, List, Dict, Any
 from enum import Enum
 from datetime import datetime
@@ -43,6 +43,33 @@ class ProductAttribute(BaseModel):
     confidence: float = 0.0
     evidence: List[Evidence] = []
     warnings: List[str] = []
+
+    @field_validator('confidence')
+    @classmethod
+    def validate_confidence(cls, v: float) -> float:
+        return max(0.0, min(1.0, v))
+
+    @field_validator('uom')
+    @classmethod
+    def validate_uom(cls, v: Optional[str]) -> Optional[str]:
+        if not v:
+            return v
+        # Normalize common UOMs
+        v_lower = v.lower().strip()
+        uom_map = {
+            "inches": "in", "inch": "in", "\"": "in",
+            "feet": "ft", "foot": "ft", "'": "ft",
+            "millimeters": "mm", "millimeter": "mm",
+            "centimeters": "cm",
+            "volts": "V", "volt": "V", "vac": "VAC", "vdc": "VDC",
+            "watts": "W", "watt": "W",
+            "amps": "A", "amp": "A", "amperes": "A",
+            "pounds": "lbs", "pound": "lbs", "lb": "lbs",
+            "kilograms": "kg", "kilogram": "kg",
+            "gallons": "gal", "gallon": "gal",
+            "ounces": "oz", "ounce": "oz"
+        }
+        return uom_map.get(v_lower, v)
 
 
 class ProductIdentity(BaseModel):
@@ -89,6 +116,16 @@ class ProductContent(BaseModel):
     application: Optional[str] = None
     includes: Optional[str] = None
     product_name: Optional[str] = None
+
+    @field_validator('invoice_description')
+    @classmethod
+    def validate_invoice_desc(cls, v: Optional[str]) -> Optional[str]:
+        if not v:
+            return v
+        v = v.strip().upper()
+        if len(v) > 40:
+            return v[:40].strip()
+        return v
 
 
 class ValidationResult(BaseModel):

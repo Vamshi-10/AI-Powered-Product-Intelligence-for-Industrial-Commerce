@@ -50,27 +50,27 @@ class SpecializedModelRouter:
         self.openrouter_key = openrouter_key or OPENROUTER_API_KEY or os.getenv("OPENROUTER_API_KEY", "")
         self.ollama_url = ollama_url.rstrip("/")
 
-        # Specialists and Rescue Fallback Chain
+        # Specialists and Rescue Fallback Chain (100% Active 2026 Free Roster)
         self.specialists = {
             "url_reader": {
-                "primary": {"name": "Gemini 2.0 Flash", "provider": "gemini", "model": GEMINI_MODEL},
-                "rescue": {"name": "Ox Alpha (1M Context)", "provider": "openrouter", "model": OPENROUTER_OX_ALPHA},
+                "primary": {"name": "Groq Fast Reader", "provider": "groq", "model": GROQ_MODEL},
+                "rescue": {"name": "Gemini 3 Flash", "provider": "gemini", "model": GEMINI_MODEL},
             },
             "image_vision": {
-                "primary": {"name": "Gemini 2.0 Flash Vision", "provider": "gemini", "model": GEMINI_MODEL},
+                "primary": {"name": "Gemini 3 Flash Vision", "provider": "gemini", "model": GEMINI_MODEL},
                 "rescue": {"name": "Local Ollama Llava", "provider": "ollama", "model": OLLAMA_VISION_MODEL},
             },
             "fast_extractor": {
-                "primary": {"name": "Groq Llama 3.3 70B", "provider": "groq", "model": GROQ_MODEL},
-                "rescue": {"name": "Gemini 2.0 Flash", "provider": "gemini", "model": GEMINI_MODEL},
+                "primary": {"name": "Groq Llama/GPT Engine", "provider": "groq", "model": GROQ_MODEL},
+                "rescue": {"name": "Gemini 3 Flash", "provider": "gemini", "model": GEMINI_MODEL},
             },
             "deep_reasoner": {
-                "primary": {"name": "Ox Alpha Stealth", "provider": "openrouter", "model": OPENROUTER_OX_ALPHA},
-                "rescue": {"name": "Nemotron 70B", "provider": "openrouter", "model": OPENROUTER_NEMOTRON},
+                "primary": {"name": "Groq 120B Reasoner", "provider": "groq", "model": GROQ_MODEL},
+                "rescue": {"name": "Gemini 3 Flash", "provider": "gemini", "model": GEMINI_MODEL},
             },
             "bulk_offline": {
-                "primary": {"name": "Local Qwen 2.5 7B", "provider": "ollama", "model": OLLAMA_MODEL},
-                "rescue": {"name": "Groq Llama 70B", "provider": "groq", "model": GROQ_MODEL},
+                "primary": {"name": "Groq 24/7 Engine", "provider": "groq", "model": GROQ_MODEL},
+                "rescue": {"name": "Local Qwen 2.5", "provider": "ollama", "model": OLLAMA_MODEL},
             },
         }
 

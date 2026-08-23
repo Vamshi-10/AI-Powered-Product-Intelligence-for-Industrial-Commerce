@@ -10,3 +10,9 @@ python-dotenv
 httpx
 pypdf
 Pillow
+duckduckgo_search
+trafilatura
+beautifulsoup4
+google-generativeai
+chromadb
+sentence-transformers

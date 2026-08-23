@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: industrial_ai_backend
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      - HOST=0.0.0.0
+    restart: unless-stopped
+    # If you have a local Ollama instance running on the host machine,
+    # the backend container needs to be able to reach it. 
+    # 'host.docker.internal' allows the container to talk to localhost on the host machine (Windows/Mac).
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    container_name: industrial_ai_frontend
+    ports:
+      - "80:80"
+      - "3000:80" # Maps port 3000 on host to port 80 in container as a fallback
+    depends_on:
+      - backend
+    restart: unless-stopped
