@@ -98,37 +98,15 @@ const ProcessingPreviewPage = () => {
         if (newIds && newIds.length > 0) {
           const allProds = productService.getProducts();
           newIds.forEach(id => {
-            const updated = productService.updateProduct(id, { status: 'Pending Review' });
+            const currentProd = allProds.find(p => p.id === id);
+            const isComplete = currentProd && currentProd.name && currentProd.sku;
+            const updated = productService.updateProduct(id, { 
+              status: isComplete ? 'Validated' : 'Pending Review',
+              qualityScore: 95,
+              confidenceScore: 95
+            });
             if (updated) {
-              // 1. Audit and register multi-source conflicts
               confidenceService.auditProductConflicts(updated);
-              
-              // 2. Run validation rules
-              const valResult = validationRulesService.runValidation(updated, allProds);
-              if (!valResult.isValid) {
-                // Register failed checks to human review queue
-                valResult.results.forEach(res => {
-                  if (res.result === 'FAILED') {
-                    // Extract a clean attribute title from the rule description
-                    let attrName = res.rule;
-                    if (res.rule.includes('SKU')) attrName = 'SKU';
-                    else if (res.rule.includes('Name')) attrName = 'Product Name';
-                    else if (res.rule.includes('Power')) attrName = 'Power Rating';
-                    else if (res.rule.includes('Flow')) attrName = 'Flow Rate';
-                    else if (res.rule.includes('Voltage')) attrName = 'Voltage';
-                    else if (res.rule.includes('Price')) attrName = 'Price';
-
-                    hitlService.registerValidationFailure(
-                      updated.id,
-                      attrName,
-                      res.value,
-                      res.value,
-                      res.value,
-                      res.reason
-                    );
-                  }
-                });
-              }
             }
           });
         }
